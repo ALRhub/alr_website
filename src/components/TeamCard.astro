@@ -73,17 +73,5 @@ const badgeColors = [
     <h3 class="text-lg font-semibold text-gray-900">{name}</h3>
   </a>
   
-  {member.data.title && member.data.title.length > 0 && (
-    <div class="flex flex-wrap justify-center gap-2 mb-3 px-2">
-      {member.data.title.map((t, index) => (
-        <span class={`inline-block px-2 py-0.5 text-xs font-medium border rounded-full ${badgeColors[index % badgeColors.length]}`}>
-          {t}
-        </span>
-      ))}
-    </div>
-  )}
-  
-  {/* Role display removed as per request, relying on section headers and title badges */}
-  
   {bio && <p class="text-sm text-gray-500 line-clamp-2 px-2">{bio}</p>}
 </div>

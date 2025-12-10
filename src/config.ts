@@ -2,9 +2,9 @@ import heroImage from './assets/hero-real.jpg';
 
 export const SITE = {
   website: 'https://scholar-lite-demo.netlify.app/', // Replace with your actual deployed URL
-  author: 'ALR Team',
-  description: 'A lightweight, modern static website template for academic labs and scholars.',
-  title: 'Autonomous Learning Robots Lab',
+  author: 'Autonomous Learning Robots Lab @ KIT',
+  description: 'Autonomous Learning Robots Lab @ Karlsruhe Institute of Technology',
+  title: 'Scholar-Lite',
   ogImage: 'astropaper-og.jpg',
   lightAndDarkMode: true,
   postPerPage: 3,
@@ -28,32 +28,20 @@ export const SITE = {
   // Navigation
   nav: [
     { text: 'Home', link: '/', key: 'home' },
-    { text: 'Research', link: '/research', key: 'research' },
+    { text: 'Team', link: '/team', key: 'team' },
+    // { text: 'Research', link: '/research', key: 'research' },
     // { text: 'Achievements', link: '/achievements', key: 'achievements' },
     { text: 'Publications', link: '/publications', key: 'publications' },
-    { text: 'Software', link: '/achievements', key: 'software' },
-    { text: 'Team', link: '/team', key: 'team' },
+    { text: 'Software', link: '/software', key: 'software' },
+    { text: 'Teaching', link: 'https://alr.iar.kit.edu/28.php', key: 'teaching' },
     // { text: 'Activities', link: '/activities', key: 'activities' },
-    // { text: 'Join Us', link: '/join', key: 'join' },
-    // { text: 'Search', link: '/search', key: 'search' },
   ],
 
   // Custom Pages (Appended after 'Join Us')
   customPages: [
     // Example: { text: 'Alumni', link: '/alumni', key: 'alumni' }
-  ],
-
-  // i18n Config
-  i18n: {
-    enabled: true,
-    defaultLocale: 'en',
-  }
+  ]
 };
-
-export const LOCALE = {
-  lang: 'en', // html lang code. Set this empty and default will be "en"
-  langTag: ['en-EN'], // BCP 47 Language Tags. Set this empty [] to use the environment default
-} as const;
 
 export const LOGO_IMAGE = {
   enable: true,
@@ -68,6 +56,3 @@ export const SOCIALS = [
     active: true,
   },
 ];
-
-// Default language configuration
-export const DEFAULT_LANG: 'zh' | 'en' | 'ja' | 'ko' | 'fr' | 'de' | 'es' | 'ru' = 'en'; 

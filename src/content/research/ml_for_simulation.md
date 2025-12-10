@@ -1,8 +1,8 @@
 ---
-title: "Computer Vision"
+title: "ML for Simulation"
 description: "Our research in computer vision focuses on object detection, segmentation, and 3D reconstruction."
 cover: "../../assets/paper-vision.jpg"
-order: 1
+order: 3
 ---
 # Computer Vision Research
 

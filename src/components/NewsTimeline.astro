@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+
+const allNews = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<div class="border-l-2 border-gray-100 pl-8 space-y-12">
+    {allNews.map(item => (
+    <div class="relative">
+        <span class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-blue-100 border-2 border-white ring-1 ring-blue-600"></span>
+        <time class="block text-sm text-gray-500 mb-2">{item.data.date.toISOString().split('T')[0]}</time>
+        <h2 class="text-xl font-bold text-gray-900 mb-2">{item.data.title}</h2>
+        {item.data.summary && <p class="text-gray-600 mb-4">{item.data.summary}</p>}
+        <div class="prose prose-blue prose-sm text-gray-600">
+            <!-- We could render the full body here if needed, or just keep it as a list -->
+            {/* <item.Content /> */}
+        </div>
+    </div>
+    ))}

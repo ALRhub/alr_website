@@ -4,14 +4,15 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import { ArrowRight, Calendar } from 'lucide-react';
 import { SITE } from '../config';
+import NewsTimeline from '../components/NewsTimeline.astro';
 
 const papers = (await getCollection('publications'))
   .filter(p => p.data.type === 'paper' && p.data.featured)
   .sort((a, b) => b.data.year - a.data.year)
   .slice(0, 3);
 
-const activities = (await getCollection('activities'))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+const researchAreas = (await getCollection('research'))
+  .sort((a, b) => a.data.order.valueOf() - b.data.order.valueOf())
   .slice(0, 3);
 ---
 
@@ -74,9 +75,9 @@ const activities = (await getCollection('activities'))
   <!-- <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-end mb-8">
-        <h2 class="text-3xl font-bold text-gray-900" data-i18n-key="section.selectedPubs">Selected Publications</h2>
+        <h2 class="text-3xl font-bold text-gray-900">Selected Publications</h2>
         <a href="/achievements" class="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 group">
-          <span data-i18n-key="section.viewAll">View all</span> <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <span >View all</span> <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </a>
       </div>
 
@@ -127,97 +128,50 @@ const activities = (await getCollection('activities'))
   <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-end mb-8">
-        <h2 class="text-3xl font-bold text-gray-900">Research Groups</h2>
-        <a href="/achievements" class="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 group">
-          <span data-i18n-key="section.viewAll">View all</span> <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        <h2 class="text-3xl font-bold text-gray-900">Research Areas</h2>
+        <a href="/research" class="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 group">
+          <span>View all</span> <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </a>
       </div>
 
-      <div class="grid gap-6 md:grid-cols-3">
-        {papers.map(paper => {
-          const link = paper.data.links?.website || paper.data.links?.pdf || '/achievements';
-          const isExternal = link.startsWith('http');
-          return (
-          <a 
-            href={link}
-            target={isExternal ? "_blank" : undefined}
-            rel={isExternal ? "noopener noreferrer" : undefined} 
-            class="bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 overflow-hidden flex flex-col h-full group"
-          >
-             {paper.data.cover && (
-               <div class="h-48 overflow-hidden border-b border-gray-100 bg-gray-50">
-                 <Image 
-                   src={paper.data.cover} 
-                   alt={paper.data.title}
-                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                   quality={60}
-                   format="webp"
-                   widths={[320, 480]}
-                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                 />
-               </div>
-             )}
-             <div class="p-6 flex flex-col flex-grow">
-               <h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
-                 {paper.data.title}
-               </h3>
-               <p class="text-gray-600 mb-4 text-sm line-clamp-2 flex-grow" title={paper.data.authors.join(', ')}>
-                 {paper.data.authors.length > 3 
-                   ? `${paper.data.authors.slice(0, 3).join(', ')}, et al.` 
-                   : paper.data.authors.join(', ')}
-               </p>
-               <div class="flex items-center justify-between text-sm mt-auto gap-4">
-                  <span class="font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded truncate text-left block max-w-full" title={paper.data.venue}>{paper.data.venue}</span>
-                  <span class="text-gray-500 shrink-0">{paper.data.year}</span>
-               </div>
-             </div>
-          </a>
-        )})}
-      </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {researchAreas.map(area => (
+        <div class="group relative bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300">
+          {area.data.cover && (
+            <div class="h-48 overflow-hidden bg-gray-100">
+              <img 
+                src={area.data.cover.src} 
+                alt={area.data.title} 
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+          )}
+          
+          <div class="p-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+              {area.data.title}
+            </h2>
+            <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+              {area.data.description}
+            </p>
+            <a 
+              href={`/research/${area.id.replace(/\.[^/.]+$/, "")}`} 
+              class="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-700"
+            >
+              <span>Learn more</span> <ArrowRight className="ml-1 w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      ))}
     </div>
   </section>
 
-  <!-- Latest Activities -->
   <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-end mb-8">
-        <h2 class="text-3xl font-bold text-gray-900" data-i18n-key="section.latestNews">Latest Activities</h2>
-        <a href="/activities" class="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 group">
-          <span data-i18n-key="section.viewAll">View all</span> <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </a>
+        <h2 class="text-3xl font-bold text-gray-900">News</h2>
       </div>
-
-      <div class="grid gap-8 md:grid-cols-3">
-        {activities.map(item => {
-          const link = `/activities/${item.id.replace(/\.[^/.]+$/, "")}`;
-          return (
-          <div class="group bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-lg transition-all">
-            {item.data.cover && (
-              <a href={link} class="block h-48 overflow-hidden">
-                <Image 
-                  src={item.data.cover} 
-                  alt={item.data.title}
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  quality={80}
-                  format="webp"
-                  widths={[320, 480, 600]}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </a>
-            )}
-            <div class="p-6">
-              <div class="text-sm text-gray-500 mb-2 flex items-center gap-2">
-                 <Calendar className="w-4 h-4" />
-                 {item.data.date.toLocaleDateString()}
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-2 line-clamp-2">
-                <a href={link}>{item.data.title}</a>
-              </h3>
-              <p class="text-gray-600 line-clamp-3 text-sm">{item.data.description || (item.body || '').substring(0, 100)}</p>
-            </div>
-          </div>
-        )})}
-      </div>
+      <NewsTimeline />
     </div>
   </section>
 </Layout>

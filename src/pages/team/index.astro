@@ -1,6 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import TeamCard from '../components/TeamCard.astro';
+import Layout from '../../layouts/Layout.astro';
+import TeamCard from '../../components/TeamCard.astro';
 import { getCollection } from 'astro:content';
 
 const allMembers = await getCollection('team');
@@ -8,14 +8,8 @@ const allMembers = await getCollection('team');
 // Define groups based on domestic hierarchy + international standard
 const groups = [
   {
-    id: 'pi',
-    titleKey: 'team.pi',
-    roles: ['Principal Investigator']
-  },
-  {
     id: 'faculty',
-    titleKey: 'team.faculty',
-    roles: ['Professor', 'Associate Professor', 'Assistant Professor']
+    roles: ['Professor']
   },
   {
     id: 'staff',
@@ -24,32 +18,30 @@ const groups = [
   },
   {
     id: 'postdoc',
-    titleKey: 'team.youth_researcher',
     roles: ['Postdoc']
   },
   {
     id: 'phd',
-    titleKey: 'team.phd',
     roles: ['PhD Student']
   },
   {
     id: 'industryphd',
-    titleKey: 'team.industryphd',
     roles: ['Industry PhD Student']
   },
   {
+    id: 'hiwi',
+    roles: ['Hiwi']
+  },
+  {
     id: 'master',
-    titleKey: 'team.master',
     roles: ['Master Student']
   },
   {
-    id: 'undergrad',
-    titleKey: 'team.undergrad',
-    roles: ['Undergraduate']
+    id: 'bachelor',
+    roles: ['Bachelor Student']
   },
   {
     id: 'alumni',
-    titleKey: 'team.alumni',
     roles: ['Alumni']
   }
 ];
@@ -65,9 +57,10 @@ const getRolePriority = (role: string) => {
     'Postdoc': 6,
     'PhD Student': 7,
     'Industry PhD Student': 8,
-    'Master Student': 9,
-    'Undergraduate': 10,
-    'Alumni': 11
+    'Hiwi': 9,
+    'Master Student': 10,
+    'Bachelor Student': 11,
+    'Alumni': 12
   };
   return priorities[role] ?? 99;
 };
@@ -91,7 +84,7 @@ const groupedMembers = groups.reduce((acc, group) => {
     });
   }
   return acc;
-}, [] as Array<{ id: string, titleKey: string, roles: string[], members: typeof allMembers }>);
+}, [] as Array<{ id: string, roles: string[], members: typeof allMembers }>);
 
 ---
 
@@ -100,23 +93,23 @@ const groupedMembers = groups.reduce((acc, group) => {
     <div class="max-w-3xl mx-auto text-center mb-16">
       <h1 class="text-4xl font-bold text-gray-900 mb-4" data-i18n-key="team.title">Our Team</h1>
       <p class="text-lg text-gray-600" data-i18n-key="team.subtitle">
-        Meet the researchers and students behind our innovations.
+        That's us.
       </p>
     </div>
 
     <div class="space-y-20">
       {groupedMembers.map(group => (
         <section>
-          <h2 class="text-2xl font-bold text-gray-900 mb-8 pl-4 border-l-4 border-blue-600" data-i18n-key={group.titleKey}>
+          <h2 class="text-2xl font-bold text-gray-900 mb-8 pl-4 border-l-4 border-blue-600">
             {/* Fallback text if JS doesn't replace it immediately, though i18n script should handle it */}
-            {group.id === 'pi' ? 'Principal Investigator' :
-             group.id === 'faculty' ? 'Faculty' :
+            {group.id === 'faculty' ? 'Faculty' :
              group.id === 'postdoc' ? 'Postdoctoral Researchers' :
              group.id === 'staff' ? 'Staff' :
              group.id === 'phd' ? 'PhD Students' :
              group.id === 'industryphd' ? 'Industry PhD Students' :
              group.id === 'master' ? 'Master Students' :
-             group.id === 'undergrad' ? 'Undergraduate Students' :
+             group.id === 'bachelor' ? 'Bachelor Students' :
+             group.id === 'hiwi' ? 'Student Assistants' :
              group.id === 'alumni' ? 'Alumni' : ''}
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
