@@ -2,11 +2,15 @@
 name: "Tai Hoang"
 role: "PhD Student"
 title: ["PhD Student"]
-avatar: "../../assets/avatar-david.jpg"
-bio: "Focusing on explainable AI and fairness in machine learning algorithms."
+avatar: "../../assets/avatar-tai.jpg"
+bio: "Focusing on reinforcement learning and physical modelling with graphs."
 email: "tai.hoang@kit.edu"
-github: "https://github.com/fjd2004711"
-linkedin: "https://linkedin.com"
-weight: 20
+github: "https://github.com/thobotics"
+linkedin: "https://www.linkedin.com/in/thobotics"
+website: "https://thobotics.github.io"
+weight: 30
 ---
-Emily is a third-year PhD student. Her research aims to make deep learning models more transparent and interpretable. She recently interned at Google Research working on fairness metrics for large language models.
+I started my PhD at the Autonomous Learning Robot (ALR) group in June 2023 at KIT, under the supervision of Prof. Gerhard Neumann. Before that, I completed my Master at the Technical University of Munich and my Bachelor at the University of Information Technology in Vietnam, both majoring in Computer Science.
+
+<br/>
+My research interest includes: <i>Graph Neural Networks</i>, <i>Physical Modelling</i>, <i>Reinforcement Learning</i>, and <i>Deformable Object Manipulation</i>.

@@ -63,9 +63,12 @@ const team = defineCollection({
       'Professor', 
       'Associate Professor',
       'Assistant Professor',
+      'Secretary',
+      'IT Administrator',
       'Postdoc', 
       'Research Assistant',
       'PhD Student', 
+      'Industry PhD Student',
       'Master Student', 
       'Undergraduate', 
       'Alumni'
