@@ -1,10 +1,9 @@
 ---
-name: "Alex Morgan"
+name: "Test Hiwi"
 role: "Hiwi"
 avatar: "../../assets/avatar-alex.jpg"
-bio: "Working on natural language processing, code generation, and human-AI interaction."
+bio: ""
 email: "alex.morgan@university.edu"
-twitter: "https://twitter.com"
 weight: 3
 ---
 This is just a test; remove me later

@@ -1,7 +1,7 @@
 ---
 title: "Swarm Reinforcement Learning for Time-Dependent Adaptive Mesh Refinement"
 types: ["master", "project"]
-supervisors: ["niklas_freymuth", "philipp_dahlinger"]
+supervisors: ["niklas-freymuth", "philipp-dahlinger"]
 topics: ["Swarm Reinforcement Learning"]
 teaser: "../../assets/avatar-michael.jpg"
 start: ASAP
