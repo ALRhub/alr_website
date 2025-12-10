@@ -42,7 +42,7 @@ const team = defineCollection({
       'Postdoc', 
       'Research Assistant',
       'PhD Student', 
-      'Industry PhD Student',
+      'Off-Campus PhD Student',
       'Master Student', 
       'Bachelor Student',
       'Hiwi',

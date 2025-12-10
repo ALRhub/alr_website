@@ -25,7 +25,7 @@ const groups = [
   },
   {
     id: 'industryphd',
-    roles: ['Industry PhD Student']
+    roles: ['Off-Campus PhD Student']
   },
   {
     id: 'hiwi',
@@ -55,7 +55,7 @@ const getRolePriority = (role: string) => {
     'IT Administrator': 5,
     'Postdoc': 6,
     'PhD Student': 7,
-    'Industry PhD Student': 8,
+    'Off-Campus PhD Student': 8,
     'Hiwi': 9,
     'Master Student': 10,
     'Bachelor Student': 11,
@@ -105,7 +105,7 @@ const groupedMembers = groups.reduce((acc, group) => {
              group.id === 'postdoc' ? 'Postdoctoral Researchers' :
              group.id === 'staff' ? 'Staffs' :
              group.id === 'phd' ? 'PhD Students' :
-             group.id === 'industryphd' ? 'Industry PhD Students' :
+             group.id === 'industryphd' ? 'Off-Campus PhD Students' :
              group.id === 'master' ? 'Master Students' :
              group.id === 'bachelor' ? 'Bachelor Students' :
              group.id === 'hiwi' ? 'Student Assistants' :
