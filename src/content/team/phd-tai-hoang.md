@@ -1,7 +1,6 @@
 ---
 name: "Tai Hoang"
 role: "PhD Student"
-title: ["PhD Student"]
 avatar: "../../assets/avatar-david.jpg"
 bio: "Focusing on explainable AI and fairness in machine learning algorithms."
 email: "tai.hoang@kit.edu"

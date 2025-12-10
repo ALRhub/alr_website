@@ -28,12 +28,13 @@ export const SITE = {
   // Navigation
   nav: [
     { text: 'Home', link: '/', key: 'home' },
-    { text: 'Research', link: '/research', key: 'research' },
+    { text: 'Team', link: '/team', key: 'team' },
+    // { text: 'Research', link: '/research', key: 'research' },
     // { text: 'Achievements', link: '/achievements', key: 'achievements' },
     { text: 'Publications', link: '/publications', key: 'publications' },
     { text: 'Software', link: '/software', key: 'software' },
-    { text: 'Team', link: '/team', key: 'team' },
-    { text: 'Activities', link: '/activities', key: 'activities' },
+    { text: 'Teaching', link: 'https://alr.iar.kit.edu/28.php', key: 'teaching' },
+    // { text: 'Activities', link: '/activities', key: 'activities' },
   ],
 
   // Custom Pages (Appended after 'Join Us')

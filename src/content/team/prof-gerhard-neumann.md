@@ -1,10 +1,9 @@
 ---
-name: "Prof. Michael Brown"
+name: "Prof. Gerhard Neumann"
 role: "Professor"
-title: ["Professor", "Changjiang Scholar", "ACM Senior Member"]
 avatar: "../../assets/avatar-michael.jpg"
 bio: "Professor specializing in Computer Graphics, Virtual Reality, and immersive systems."
-email: "michael.brown@university.edu"
+email: "gerhard.neumann@kit.edu"
 website: "https://michaelbrown.cs.university.edu"
 linkedin: "https://linkedin.com/in/michaelbrown"
 github: "https://github.com/fjd2004711"
