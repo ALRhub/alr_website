@@ -13,7 +13,6 @@ const groups = [
   },
   {
     id: 'staff',
-    titleKey: 'team.support',
     roles: ['Secretary', 'IT Administrator']
   },
   {
@@ -104,7 +103,7 @@ const groupedMembers = groups.reduce((acc, group) => {
             {/* Fallback text if JS doesn't replace it immediately, though i18n script should handle it */}
             {group.id === 'faculty' ? 'Faculty' :
              group.id === 'postdoc' ? 'Postdoctoral Researchers' :
-             group.id === 'staff' ? 'Staff' :
+             group.id === 'staff' ? 'Staffs' :
              group.id === 'phd' ? 'PhD Students' :
              group.id === 'industryphd' ? 'Industry PhD Students' :
              group.id === 'master' ? 'Master Students' :

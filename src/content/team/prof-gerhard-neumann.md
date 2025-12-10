@@ -1,6 +1,6 @@
 ---
 name: "Prof. Gerhard Neumann"
-role: "Principal Investigator"
+role: "Professor"
 title: ["Head of ALR Group"]
 avatar: "../../assets/avatar-default.png"
 bio: "Head of the Autonomous Learning Robot (ALR) group at KIT."
