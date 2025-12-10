@@ -4,7 +4,6 @@ description: "Our research in computer vision focuses on object detection, segme
 cover: "../../assets/paper-vision.jpg"
 order: 1
 ---
-# Computer Vision Research
 
 Our lab works on state-of-the-art computer vision algorithms.
 

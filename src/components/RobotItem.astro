@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import { render } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+interface Props {
+    entry: CollectionEntry<"robots">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<div class="group flex flex-col items-center text-center">
+    <div
+        class="w-48 h-48 mb-4 rounded-xl overflow-hidden bg-gray-100 group-hover:shadow-lg transition-shadow"
+    >
+        <img
+            src={entry.data.teaser.src}
+            alt={entry.data.name}
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+        />
+    </div>
+
+    <h3 class="text-lg font-semibold text-gray-900">
+        {entry.data.name}
+    </h3>
+
+    <!-- TODO content is not properly formatted. should we add a separate page per robot? -->
+    <p class="text-sm text-gray-500 line-clamp-2 px-2"><Content /></p>
+</div>

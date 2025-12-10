@@ -110,6 +110,15 @@ const theses = defineCollection({
   }),
 });
 
+const robots = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/robots" }),
+  schema: ({ image }) => z.object({
+    name: z.string(),
+    teaser: image(),
+    weight: z.number().default(100),
+  }),
+});
+
 export const collections = {
   publications,
   team,
@@ -117,4 +126,5 @@ export const collections = {
   research,
   softwares,
   theses,
+  robots,
 };

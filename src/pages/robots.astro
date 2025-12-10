@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { ArrowRight } from "lucide-react";
+import RobotItem from "../components/RobotItem.astro";
+
+const robots = (await getCollection("robots")).sort(
+    (a, b) => b.data.weight - a.data.weight,
+);
+---
+
+<Layout title="Robots">
+    <div class="max-w-7xl mx-auto px-4 py-12 sm:py-20">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">
+                Open-Source Software
+            </h1>
+            <p class="text-lg text-gray-600">
+                We have various cool robots available for research.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {robots.map((robot) => <RobotItem entry={robot} />)}
+        </div>
+    </div>
+</Layout>

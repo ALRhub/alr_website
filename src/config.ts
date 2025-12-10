@@ -32,6 +32,7 @@ export const SITE = {
     // { text: 'Research', link: '/research', key: 'research' },
     // { text: 'Achievements', link: '/achievements', key: 'achievements' },
     { text: 'Publications', link: '/publications', key: 'publications' },
+    { text: 'Robots', link: '/robots', key: 'robots' },
     { text: 'Software', link: '/software', key: 'software' },
     { text: 'Theses', link: '/theses', key: 'theses' },
     { text: 'Teaching', link: 'https://alr.iar.kit.edu/28.php', key: 'teaching' },
