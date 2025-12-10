@@ -90,10 +90,31 @@ const softwares = defineCollection({
   }),
 });
 
+const theses = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/theses" }),
+  schema: z.object({
+    title: z.string(),
+    types: z.array(z.enum([
+      'bachelor',
+      'master',
+      'project',
+    ])),
+    topics: z.array(z.string()),
+    supervisors: z.array(z.string()),
+    start: z.string(),
+    added: z.date(),
+    order: z.number().default(100),
+    assigned: z.boolean(),
+    pdf: z.string(),
+    student: z.string().optional()
+  }),
+});
+
 export const collections = {
   publications,
   team,
   news,
   research,
   softwares,
+  theses,
 };

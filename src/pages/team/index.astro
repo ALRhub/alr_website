@@ -90,8 +90,8 @@ const groupedMembers = groups.reduce((acc, group) => {
 <Layout title="Team">
   <div class="max-w-7xl mx-auto px-4 py-12 sm:py-20">
     <div class="max-w-3xl mx-auto text-center mb-16">
-      <h1 class="text-4xl font-bold text-gray-900 mb-4" data-i18n-key="team.title">Our Team</h1>
-      <p class="text-lg text-gray-600" data-i18n-key="team.subtitle">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">Our Team</h1>
+      <p class="text-lg text-gray-600">
         That's us.
       </p>
     </div>
@@ -100,7 +100,6 @@ const groupedMembers = groups.reduce((acc, group) => {
       {groupedMembers.map(group => (
         <section>
           <h2 class="text-2xl font-bold text-gray-900 mb-8 pl-4 border-l-4 border-blue-600">
-            {/* Fallback text if JS doesn't replace it immediately, though i18n script should handle it */}
             {group.id === 'faculty' ? 'Faculty' :
              group.id === 'postdoc' ? 'Postdoctoral Researchers' :
              group.id === 'staff' ? 'Staffs' :
@@ -120,7 +119,7 @@ const groupedMembers = groups.reduce((acc, group) => {
       ))}
 
       {allMembers.length === 0 && (
-        <p class="text-gray-500 text-center py-12" data-i18n-key="team.noMembers">No team members found. Add markdown files to src/content/team/</p>
+        <p class="text-gray-500 text-center py-12">No team members found. Add markdown files to src/content/team/</p>
       )}
     </div>
   </div>

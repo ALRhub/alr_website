@@ -1,5 +1,5 @@
 ---
-import { FileText, Github, Play, MonitorPlay, Video, ExternalLink, Globe, Sparkles } from 'lucide-react';
+import { FileText, Github, Play, MonitorPlay, Video, ExternalLink, Globe, Sparkles, Megaphone } from 'lucide-react';
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 
@@ -71,6 +71,7 @@ const formatLabel = (key: string) => {
       {badges && badges.map(badge => (
         <span class={`px-2 py-0.5 rounded-full text-xs font-medium border flex items-center gap-1 ${badgeStyles[badge.type] || badgeStyles.default}`}>
            {badge.type === 'gold' && <Sparkles class="w-3 h-3" />}
+           {badge.type === 'red' && <Megaphone class="w-3 h-3" />}
            {badge.text}
         </span>
       ))}

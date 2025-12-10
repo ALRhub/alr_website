@@ -1,0 +1,72 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { ArrowRight } from "lucide-react";
+import ThesisItem from "../../components/ThesisItem.astro";
+
+const theses = (await getCollection("theses")).sort(
+    (a, b) => a.data.order - b.data.order,
+);
+
+const availableTheses = theses.filter((thesis) => !thesis.data.assigned);
+const assignedTheses = theses.filter((thesis) => thesis.data.assigned);
+---
+
+<Layout title="Theses">
+    <div class="max-w-7xl mx-auto px-4 py-12 sm:py-20 space-y-20">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">
+                Available Thesis Topics
+            </h1>
+            <p class="text-lg text-gray-600">
+                We offer several Master Theses, Bachelor Theses, as well as
+                projects that can be done as practica or "Praxis der Forschung".
+            </p>
+
+            <p class="text-lg text-gray-600">
+                Please directly contact the supervisor(s) if you are interested
+                in a specific topic. If you want to do a thesis in a specific
+                area, directly contact the supervisors working on this topic.
+            </p>
+            <p class="text-lg text-gray-600">
+                Even if there is currently no open topic that seems to fit your
+                interest, please have a look at the research topics of our <a
+                    href="/team">potential supervisors</a
+                >.
+            </p>
+        </div>
+
+        <section>
+            <h2
+                class="text-2xl font-bold text-gray-900 mb-8 pl-4 border-l-4 border-blue-600"
+            >
+                Available Topics
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {availableTheses.map((thesis) => <ThesisItem entry={thesis} />)}
+            </div>
+
+            {
+                theses.length === 0 && (
+                    <div class="text-center py-20">
+                        <p class="text-gray-500">
+                            No theses available at the moment :/ However, you
+                            can always contact a potential supervisor!
+                        </p>
+                    </div>
+                )
+            }
+        </section>
+
+        <section>
+            <h2
+                class="text-2xl font-bold text-gray-900 mb-8 pl-4 border-l-4 border-blue-600"
+            >
+                Assigned Topics
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {assignedTheses.map((thesis) => <ThesisItem entry={thesis} />)}
+            </div>
+        </section>
+    </div>
+</Layout>

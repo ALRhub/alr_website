@@ -13,7 +13,7 @@ links:
   slides: ""
   video: "https://www.youtube.com/watch?v=diffusion-demo"
 badges:
-  - { text: "Spotlight", type: "red" }
+  - { text: "Spotlight", type: "blue" }
 description: "By decomposing the image formation process into a sequential application of denoising autoencoders, diffusion models (DMs) achieve state-of-the-art synthesis results on image data and beyond. Additionally, their formulation allows for a guiding mechanism to control the image generation process without retraining."
 featured: false
 ---

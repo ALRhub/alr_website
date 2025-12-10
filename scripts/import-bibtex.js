@@ -137,10 +137,10 @@ function importBibtex() {
        badges.push({ text: 'Best Paper', type: 'gold' });
     }
     if (note.toLowerCase().includes('oral')) {
-       badges.push({ text: 'Oral', type: 'blue' });
+       badges.push({ text: 'Oral', type: 'red' });
     }
     if (note.toLowerCase().includes('spotlight')) {
-       badges.push({ text: 'Spotlight', type: 'red' });
+       badges.push({ text: 'Spotlight', type: 'blue' });
     }
     if (note.toLowerCase().includes('best student paper')) {
       badges.push({ text: 'Best Student Paper', type: 'gold' });
