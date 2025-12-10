@@ -34,8 +34,8 @@ const sections = [
 <Layout title="Achievements">
   <div class="max-w-7xl mx-auto px-4 py-12 sm:py-20">
     <div class="max-w-3xl mx-auto text-center mb-16">
-      <h1 class="text-4xl font-bold text-gray-900 mb-4" data-i18n-key="achievements.title">Research Achievements</h1>
-      <p class="text-lg text-gray-600" data-i18n-key="achievements.subtitle">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">Research Achievements</h1>
+      <p class="text-lg text-gray-600">
         A comprehensive collection of our academic publications, intellectual property, and collective honors.
       </p>
     </div>
@@ -48,7 +48,7 @@ const sections = [
           class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm font-medium"
         >
           <section.icon className="w-4 h-4" />
-          <span data-i18n-key={section.key}>{section.title}</span>
+          <span>{section.title}</span>
           <span class="bg-white px-2 py-0.5 rounded-full text-xs text-gray-400 shadow-sm">{section.count}</span>
         </a>
       ))}
@@ -59,11 +59,11 @@ const sections = [
       <section id="papers" class="scroll-mt-24">
         <div class="flex items-center gap-3 mb-8">
           <BookOpen className="w-8 h-8 text-blue-600" />
-          <h2 class="text-3xl font-bold text-gray-900" data-i18n-key="achievements.papers">Published Papers</h2>
+          <h2 class="text-3xl font-bold text-gray-900">Published Papers</h2>
         </div>
         <div class="grid gap-6">
           {papers.map(paper => <PublicationItem entry={paper} />)}
-          {papers.length === 0 && <p class="text-gray-500 italic" data-i18n-key="achievements.noPapers">No papers listed yet.</p>}
+          {papers.length === 0 && <p class="text-gray-500 italic">No papers listed yet.</p>}
         </div>
       </section>
 
@@ -71,11 +71,11 @@ const sections = [
       <section id="books" class="scroll-mt-24">
         <div class="flex items-center gap-3 mb-8">
           <Book className="w-8 h-8 text-blue-600" />
-          <h2 class="text-3xl font-bold text-gray-900" data-i18n-key="achievements.books">Book Chapters</h2>
+          <h2 class="text-3xl font-bold text-gray-900">Book Chapters</h2>
         </div>
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {books.map(book => <BookItem entry={book} />)}
-          {books.length === 0 && <p class="text-gray-500 italic" data-i18n-key="achievements.noBooks">No book chapters listed yet.</p>}
+          {books.length === 0 && <p class="text-gray-500 italic">No book chapters listed yet.</p>}
         </div>
       </section>
 
@@ -83,7 +83,7 @@ const sections = [
       <section id="softwares" class="scroll-mt-24">
         <div class="flex items-center gap-3 mb-8">
           <FileCode className="w-8 h-8 text-blue-600" />
-          <h2 class="text-3xl font-bold text-gray-900" data-i18n-key="achievements.softwares">Software Copyrights</h2>
+          <h2 class="text-3xl font-bold text-gray-900">Software Copyrights</h2>
         </div>
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {softwares.map(software => (
@@ -98,7 +98,7 @@ const sections = [
               </div>
               <div class="space-y-2 text-sm text-gray-600">
                 <div>
-                  <span class="font-medium text-gray-900" data-i18n-key="achievements.developers">Developers:</span> {software.data.developers.join(', ')}
+                  <span class="font-medium text-gray-900">Developers:</span> {software.data.developers.join(', ')}
                 </div>
                 <div class="flex items-center justify-between pt-2 border-t border-gray-50">
                   <span class="font-mono bg-gray-50 px-2 py-0.5 rounded border border-gray-200 text-xs">
@@ -109,7 +109,7 @@ const sections = [
               </div>
             </div>
           ))}
-           {softwares.length === 0 && <p class="text-gray-500 italic" data-i18n-key="achievements.noSoftwares">No software copyrights listed yet.</p>}
+           {softwares.length === 0 && <p class="text-gray-500 italic">No software copyrights listed yet.</p>}
         </div>
       </section>
 
@@ -117,7 +117,7 @@ const sections = [
       <section id="patents" class="scroll-mt-24">
         <div class="flex items-center gap-3 mb-8">
           <ScrollText className="w-8 h-8 text-blue-600" />
-          <h2 class="text-3xl font-bold text-gray-900" data-i18n-key="achievements.patents">Invention Patents</h2>
+          <h2 class="text-3xl font-bold text-gray-900">Invention Patents</h2>
         </div>
         <div class="grid gap-6">
           {patents.map(patent => (
@@ -142,7 +142,7 @@ const sections = [
                     </span>
                   </div>
                   <div class="text-sm text-gray-600 mb-2">
-                    <span class="font-medium text-gray-900" data-i18n-key="achievements.inventors">Inventors:</span> {patent.data.inventors.join(', ')}
+                    <span class="font-medium text-gray-900">Inventors:</span> {patent.data.inventors.join(', ')}
                   </div>
                   <div class="flex items-center gap-4 text-sm text-gray-500">
                     <span class="font-mono bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
@@ -154,7 +154,7 @@ const sections = [
               </div>
             </div>
           ))}
-           {patents.length === 0 && <p class="text-gray-500 italic" data-i18n-key="achievements.noPatents">No patents listed yet.</p>}
+           {patents.length === 0 && <p class="text-gray-500 italic">No patents listed yet.</p>}
         </div>
       </section>
 
@@ -162,11 +162,11 @@ const sections = [
       <section id="honors" class="scroll-mt-24">
         <div class="flex items-center gap-3 mb-8">
           <Award className="w-8 h-8 text-blue-600" />
-          <h2 class="text-3xl font-bold text-gray-900" data-i18n-key="achievements.honors">Group Honors</h2>
+          <h2 class="text-3xl font-bold text-gray-900">Group Honors</h2>
         </div>
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {honors.map(honor => <HonorCard honor={honor} />)}
-          {honors.length === 0 && <p class="text-gray-500 italic" data-i18n-key="achievements.noHonors">No group honors listed yet.</p>}
+          {honors.length === 0 && <p class="text-gray-500 italic">No group honors listed yet.</p>}
         </div>
       </section>
 

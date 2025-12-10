@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import { ArrowRight, Calendar } from 'lucide-react';
 import { SITE } from '../config';
+import NewsTimeline from '../components/NewsTimeline.astro';
 
 const papers = (await getCollection('publications'))
   .filter(p => p.data.type === 'paper' && p.data.featured)
@@ -74,9 +75,9 @@ const activities = (await getCollection('activities'))
   <!-- <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-end mb-8">
-        <h2 class="text-3xl font-bold text-gray-900" data-i18n-key="section.selectedPubs">Selected Publications</h2>
+        <h2 class="text-3xl font-bold text-gray-900">Selected Publications</h2>
         <a href="/achievements" class="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 group">
-          <span data-i18n-key="section.viewAll">View all</span> <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <span >View all</span> <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </a>
       </div>
 
@@ -177,47 +178,12 @@ const activities = (await getCollection('activities'))
     </div>
   </section>
 
-  <!-- Latest Activities -->
   <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-end mb-8">
-        <h2 class="text-3xl font-bold text-gray-900" data-i18n-key="section.latestNews">Latest Activities</h2>
-        <a href="/activities" class="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 group">
-          <span data-i18n-key="section.viewAll">View all</span> <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </a>
+        <h2 class="text-3xl font-bold text-gray-900">News</h2>
       </div>
-
-      <div class="grid gap-8 md:grid-cols-3">
-        {activities.map(item => {
-          const link = `/activities/${item.id.replace(/\.[^/.]+$/, "")}`;
-          return (
-          <div class="group bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-lg transition-all">
-            {item.data.cover && (
-              <a href={link} class="block h-48 overflow-hidden">
-                <Image 
-                  src={item.data.cover} 
-                  alt={item.data.title}
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  quality={80}
-                  format="webp"
-                  widths={[320, 480, 600]}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </a>
-            )}
-            <div class="p-6">
-              <div class="text-sm text-gray-500 mb-2 flex items-center gap-2">
-                 <Calendar className="w-4 h-4" />
-                 {item.data.date.toLocaleDateString()}
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-2 line-clamp-2">
-                <a href={link}>{item.data.title}</a>
-              </h3>
-              <p class="text-gray-600 line-clamp-3 text-sm">{item.data.description || (item.body || '').substring(0, 100)}</p>
-            </div>
-          </div>
-        )})}
-      </div>
+      <NewsTimeline />
     </div>
   </section>
 </Layout>

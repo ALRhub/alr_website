@@ -119,9 +119,9 @@ const softwares = defineCollection({
   schema: z.object({
     title: z.string(),
     developers: z.array(z.string()),
-    number: z.string(), // Registration Number
     date: z.date(),
-    description: z.string().optional(),
+    description: z.string(),
+    order: z.number().default(100),
   }),
 });
 
