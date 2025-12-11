@@ -30,6 +30,8 @@ Production builds run this automatically.
 Create a new page in [src/content/team](src/content/team).
 You can copy an existing page, but make sure to adjust all metadata.
 There are various metadata tags for external links available (`email`, `website`, `linkedin`, `github`, `twitter`, `googleScholar`).
+Also remember to add a picture of you in [src/assets/avatars](src/assets/avatars).
+Make sure that the image isn't too high-resolution (e.g. 512px x 512px) and ideally square.
 
 ### ...an alumnus?
 Create a new page in [src/content/alumni](src/content/alumni).
