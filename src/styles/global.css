@@ -9,6 +9,25 @@ body {
   @apply text-gray-800 bg-white antialiased;
 }
 
+/* icons */
+[data-icon] {
+  /* @apply w-3.5 h-3.5; */
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  vertical-align: sub;
+}
+
+/* text */
+p.info-text {
+  @apply text-sm text-gray-500 leading-relaxed;
+}
+
+/* links */
+a {
+  @apply hover:text-blue-600;
+}
+
 /* Custom Scrollbar for a cleaner look */
 ::-webkit-scrollbar {
   width: 8px;

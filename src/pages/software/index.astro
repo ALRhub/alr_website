@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import { ArrowRight } from 'lucide-react';
+import { Icon } from "astro-icon/components";
 
 const softwares = (await getCollection('softwares')).sort((a, b) => a.data.order - b.data.order);
 ---
@@ -29,7 +29,7 @@ const softwares = (await getCollection('softwares')).sort((a, b) => a.data.order
               href={`/software/${software.id.replace(/\.[^/.]+$/, "")}`} 
               class="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-700"
             >
-              <span >Learn more</span> <ArrowRight className="ml-1 w-4 h-4" />
+              <span >Learn more</span> <Icon name="tabler:arrow-right" class="ml-1 w-4 h-4" />
             </a>
           </div>
         </div>

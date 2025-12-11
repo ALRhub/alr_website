@@ -50,3 +50,6 @@ Generate the static site and search index:
 ```bash
 npm run build
 ```
+
+## Icons
+We are using `astro-icon` with `tabler` icons for generic icons and `simple-icons` for brand icons.

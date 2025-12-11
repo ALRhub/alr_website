@@ -1,7 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
-import { ArrowRight } from "lucide-react";
 import ThesisItem from "../../components/ThesisItem.astro";
 
 const theses = (await getCollection("theses")).sort(

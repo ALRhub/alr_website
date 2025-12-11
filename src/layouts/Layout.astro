@@ -1,8 +1,9 @@
 ---
-import { Linkedin, Github, Twitter, ArrowUpRight } from "lucide-react";
+import { Icon } from "astro-icon/components";
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import { SITE } from "../config";
+import ExternalLink from "../components/ExternalLink.astro";
 
 interface Props {
   title?: string;
@@ -62,7 +63,7 @@ const ogImage = new URL(`/og/${finalOgSlug}.png`, Astro.url);
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={pageTitle} />y</strong>
+    <meta property="twitter:title" content={pageTitle} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage} />
 
@@ -96,46 +97,42 @@ const ogImage = new URL(`/og/${finalOgSlug}.png`, Astro.url);
     </main>
 
     <footer class="border-t border-gray-100 py-8 mt-12 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">
-        <div class="grid grid-cols-2">
-          <div class="flex flex-col gap-2">
-            <div class="flex gap-2 justify-center">
-              <a
-                href="https://github.com/ALRhub"
-                target="_blank"
-                class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-gray-600 border border-gray-200 rounded-md hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 transition-all"
-              >
-                <Github className="w-3.5 h-3.5" /> ALRhub
-              </a>
-              <a
-                href="https://www.linkedin.com/company/alr-kit"
-                target="_blank"
-                class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-gray-600 border border-gray-200 rounded-md hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 transition-all"
-              >
-                <Linkedin className="w-3.5 h-3.5" /> alr-kit
-              </a>
-            </div>
-            <div>
-              <a
-                href="https://www.linkedin.com/company/alr-kit"
-                target="_blank"
-                class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-gray-600 hover:text-blue-600 transition-all"
-              >
-                University Homepage <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
-            </div>
-            <div><p>© 2025 Autonomous Learning Robots Lab</p></div>
+      <div class="max-w-7xl mx-auto px-4 grid grid-cols-2">
+        <div class="flex flex-col gap-2 text-center">
+          <div class="flex gap-2 justify-center">
+            <a
+              href="https://github.com/ALRhub"
+              target="_blank"
+              class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-gray-600 border border-gray-200 rounded-md hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 transition-all"
+            >
+              <Icon name="simple-icons:github" /> ALRhub
+            </a>
+            <a
+              href="https://www.linkedin.com/company/alr-kit"
+              target="_blank"
+              class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-gray-600 border border-gray-200 rounded-md hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 transition-all"
+            >
+              <Icon name="simple-icons:linkedin" /> alr-kit
+            </a>
           </div>
           <div>
-            <p>
-              <strong>Autonomous Learning Robots Lab</strong><br />
-              Karlsruhe Institute of Technology<br />
-              InformatiKOM 1 (4th floor)<br />
-              Adenauerring 12 <br />
-              76131 Karlsruhe <br />
-              Germany <br />
+            <p class="info-text">
+              <ExternalLink href="https://alr.iar.kit.edu/">University Homepage</ExternalLink>
             </p>
           </div>
+          <div><p class="info-text">© 2025 Autonomous Learning Robots Lab</p></div>
+        </div>
+        <div class="text-center">
+          <p class="info-text">
+            <strong>Autonomous Learning Robots Lab</strong><br />
+            Karlsruhe Institute of Technology<br />
+            <ExternalLink href="https://maps.app.goo.gl/u5qThpsuWSW8jZ2n7"
+              >InformatiKOM 1 (4th floor)</ExternalLink
+            ><br />
+            Adenauerring 12 <br />
+            76131 Karlsruhe <br />
+            Germany <br />
+          </p>
         </div>
       </div>
     </footer>

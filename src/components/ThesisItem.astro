@@ -1,7 +1,5 @@
 ---
-import {
-    ArrowRight,
-} from "lucide-react";
+import { Icon } from "astro-icon/components";
 import { getCollection, type CollectionEntry } from "astro:content";
 
 interface Props {
@@ -115,7 +113,7 @@ const formatType = (type: string) => {
                 class="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-700"
             >
                 <span>Details</span>{" "}
-                <ArrowRight className="ml-1 w-4 h-4" />
+                <Icon name="tabler:arrow-right" class="ml-1 w-4 h-4" />
             </a>
         </div>
     </div>

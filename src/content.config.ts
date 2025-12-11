@@ -11,7 +11,6 @@ const publications = defineCollection({
     type: z.enum(['paper', 'book', 'patent', 'software']).default('paper'),
     cover: image().optional(),
     doi: z.string().optional(),
-    award: z.string().optional(),
     links: z.object({
       pdf: z.string().optional(),
       code: z.string().optional(),

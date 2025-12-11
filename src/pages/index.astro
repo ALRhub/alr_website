@@ -1,62 +1,83 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
-import { ArrowRight, Calendar } from 'lucide-react';
-import { SITE } from '../config';
-import NewsTimeline from '../components/NewsTimeline.astro';
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import { SITE } from "../config";
+import NewsTimeline from "../components/NewsTimeline.astro";
 
-const papers = (await getCollection('publications'))
-  .filter(p => p.data.type === 'paper' && p.data.featured)
+const papers = (await getCollection("publications"))
+  .filter((p) => p.data.type === "paper" && p.data.featured)
   .sort((a, b) => b.data.year - a.data.year)
   .slice(0, 3);
 
-const researchAreas = (await getCollection('research'))
+const researchAreas = (await getCollection("research"))
   .sort((a, b) => a.data.order.valueOf() - b.data.order.valueOf())
   .slice(0, 3);
 ---
 
 <Layout title="Home">
   <!-- Hero Section -->
-  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+  <section
+    class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden"
+  >
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
-      {SITE.hero.image ? (
-        <Image 
-          class="w-full h-full object-cover" 
-          src={SITE.hero.image} 
-          alt={SITE.hero.title}
-          loading="eager"
-          fetchpriority="high"
-          decoding="sync"
-          quality={60}
-          format="webp"
-          widths={[640, 1024, 1920]}
-          sizes="100vw"
-        />
-      ) : (
-        <div class="w-full h-full bg-gradient-to-br from-gray-900 to-gray-800"></div>
-      )}
+      {
+        SITE.hero.image ? (
+          <Image
+            class="w-full h-full object-cover"
+            src={SITE.hero.image}
+            alt={SITE.hero.title}
+            loading="eager"
+            fetchpriority="high"
+            decoding="sync"
+            quality={60}
+            format="webp"
+            widths={[640, 1024, 1920]}
+            sizes="100vw"
+          />
+        ) : (
+          <div class="w-full h-full bg-gradient-to-br from-gray-900 to-gray-800" />
+        )
+      }
       <!-- Dark Gradient Overlay for Readability -->
-      <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"
+      >
+      </div>
       <!-- Subtle Texture (CSS only) -->
-      <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 32px 32px;"></div>
+      <div
+        class="absolute inset-0 opacity-[0.03]"
+        style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 32px 32px;"
+      >
+      </div>
     </div>
 
     <!-- Content -->
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <div class="max-w-3xl">
-        <h1 class="text-5xl font-extrabold text-white sm:text-6xl md:text-7xl mb-6 drop-shadow-lg leading-tight">
+        <h1
+          class="text-5xl font-extrabold text-white sm:text-6xl md:text-7xl mb-6 drop-shadow-lg leading-tight"
+        >
           <span class="block xl:inline">{SITE.hero.title}</span>
         </h1>
-        <p class="mt-4 text-xl text-gray-300 sm:max-w-2xl md:text-2xl drop-shadow-md">
+        <p
+          class="mt-4 text-xl text-gray-300 sm:max-w-2xl md:text-2xl drop-shadow-md"
+        >
           {SITE.hero.subtitle}
         </p>
         <div class="mt-10 flex gap-4">
-          <a href="/publications" class="flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-full text-black bg-white hover:bg-gray-100 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]">
+          <a
+            href="/publications"
+            class="flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-full text-black bg-white hover:bg-gray-100 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]"
+          >
             Publications
           </a>
-          <a href="/team" class="flex items-center justify-center px-8 py-4 border-2 border-white/30 text-lg font-medium rounded-full text-white hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+          <a
+            href="/team"
+            class="flex items-center justify-center px-8 py-4 border-2 border-white/30 text-lg font-medium rounded-full text-white hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
+          >
             Members
           </a>
         </div>
@@ -64,9 +85,20 @@ const researchAreas = (await getCollection('research'))
     </div>
 
     <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    <div
+      class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
       </svg>
     </div>
   </section>
@@ -129,49 +161,60 @@ const researchAreas = (await getCollection('research'))
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-end mb-8">
         <h2 class="text-3xl font-bold text-gray-900">Research Areas</h2>
-        <a href="/research" class="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 group">
-          <span>View all</span> <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        <a
+          href="/research"
+          class="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 group"
+        >
+          <span>View all</span>
+          <Icon
+            name="tabler:arrow-right"
+            class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+          />
         </a>
       </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {researchAreas.map(area => (
-        <div class="group relative bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300">
-          {area.data.cover && (
-            <div class="h-48 overflow-hidden bg-gray-100">
-              <img 
-                src={area.data.cover.src} 
-                alt={area.data.title} 
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-          )}
-          
-          <div class="p-6">
-            <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-              {area.data.title}
-            </h2>
-            <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-              {area.data.description}
-            </p>
-            <a 
-              href={`/research/${area.id.replace(/\.[^/.]+$/, "")}`} 
-              class="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-700"
-            >
-              <span>Learn more</span> <ArrowRight className="ml-1 w-4 h-4" />
-            </a>
-          </div>
-        </div>
-      ))}
-    </div>
-  </section>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          researchAreas.map((area) => (
+            <div class="group relative bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300">
+              {area.data.cover && (
+                <div class="h-48 overflow-hidden bg-gray-100">
+                  <img
+                    src={area.data.cover.src}
+                    alt={area.data.title}
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              )}
 
-  <section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-end mb-8">
-        <h2 class="text-3xl font-bold text-gray-900">News</h2>
+              <div class="p-6">
+                <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                  {area.data.title}
+                </h2>
+                <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                  {area.data.description}
+                </p>
+                <a
+                  href={`/research/${area.id.replace(/\.[^/.]+$/, "")}`}
+                  class="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-700"
+                >
+                  <span>Learn more</span>{" "}
+                  <Icon name="tabler:arrow-right" class="ml-1 w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          ))
+        }
       </div>
-      <NewsTimeline />
     </div>
+
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-end mb-8">
+          <h2 class="text-3xl font-bold text-gray-900">News</h2>
+        </div>
+        <NewsTimeline />
+      </div>
+    </section>
   </section>
 </Layout>
