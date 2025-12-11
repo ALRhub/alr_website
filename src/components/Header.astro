@@ -5,7 +5,7 @@ import {
   Home, BookOpen, Trophy, Users, Calendar, UserPlus, Sparkles, Search
 } from 'lucide-react';
 
-const { nav, customPages } = SITE;
+const { nav } = SITE;
 
 const iconMap: Record<string, any> = {
   home: Home,
@@ -44,22 +44,13 @@ const getIcon = (key: string) => iconMap[key] || Sparkles;
           return (
             <a 
               href={item.link} 
+              target={item.external ? "_blank" : "_self"}
               class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
             >
               {item.text}
             </a>
           );
         })}
-        
-        <!-- Custom Pages -->
-        {customPages && customPages.map(item => (
-           <a 
-             href={item.link} 
-            class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
-           >
-             {item.text}
-           </a>
-        ))}
       </nav>
 
       <!-- Mobile Menu Button -->
@@ -113,18 +104,6 @@ const getIcon = (key: string) => iconMap[key] || Sparkles;
         >
           <span>{item.text}</span>
           <ChevronDown className="w-5 h-5 -rotate-90 text-gray-400" />
-        </a>
-      ))}
-      
-      <!-- Custom Pages Mobile -->
-      {customPages && customPages.map((item) => (
-        <a 
-          href={item.link} 
-          class="flex items-center justify-between w-full py-4 px-4 text-lg font-medium text-gray-800 hover:text-blue-600 hover:bg-gray-50 rounded-xl transition-all border-b border-gray-100 last:border-0"
-          onclick="window.closeMobileMenu()"
-        >
-           <span>{item.text}</span>
-           <ChevronDown className="w-5 h-5 -rotate-90 text-gray-400" />
         </a>
       ))}
     </nav>

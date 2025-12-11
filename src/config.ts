@@ -27,21 +27,13 @@ export const SITE = {
 
   // Navigation
   nav: [
-    { text: 'Home', link: '/', key: 'home' },
-    { text: 'Team', link: '/team', key: 'team' },
-    // { text: 'Research', link: '/research', key: 'research' },
-    // { text: 'Achievements', link: '/achievements', key: 'achievements' },
-    { text: 'Publications', link: '/publications', key: 'publications' },
-    { text: 'Robots', link: '/robots', key: 'robots' },
-    { text: 'Software', link: '/software', key: 'software' },
-    { text: 'Theses', link: '/theses', key: 'theses' },
-    { text: 'Teaching', link: 'https://alr.iar.kit.edu/28.php', key: 'teaching' },
-    // { text: 'Activities', link: '/activities', key: 'activities' },
-  ],
-
-  // Custom Pages (Appended after 'Join Us')
-  customPages: [
-    // Example: { text: 'Alumni', link: '/alumni', key: 'alumni' }
+    { text: 'Home', link: '/', external: false },
+    { text: 'Team', link: '/team', external: false },
+    { text: 'Publications', link: '/publications', external: false },
+    { text: 'Robots', link: '/robots', external: false },
+    { text: 'Software', link: '/software', external: false },
+    { text: 'Theses', link: '/theses', external: false },
+    { text: 'Teaching', link: 'https://alr.iar.kit.edu/28.php', external: true },
   ]
 };
 

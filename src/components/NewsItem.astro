@@ -1,0 +1,30 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+
+interface Props {
+    entry: CollectionEntry<"news">;
+}
+
+const { entry } = Astro.props;
+
+const { Content } = await render(entry);
+---
+
+<div class="relative">
+    <span
+        class="absolute -left-[41px] top-0.5 w-4 h-4 rounded-full bg-blue-100 border-2 border-white ring-1 ring-blue-600"
+    ></span>
+    <time class="block text-sm text-gray-500 mb-2"
+        >{entry.data.date.toISOString().split("T")[0]}</time
+    >
+    <h2 class="text-xl font-bold text-gray-900 mb-2">{entry.data.title}</h2>
+    <!-- {
+        entry.data.summary && (
+            <p class="text-gray-600 mb-4">{entry.data.summary}</p>
+        )
+    } -->
+    <div class="prose prose-blue prose-sm text-gray-600">
+        <!-- We could render the full body here if needed, or just keep it as a list -->
+        <Content />
+    </div>
+</div>

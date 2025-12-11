@@ -33,17 +33,17 @@ const team = defineCollection({
   schema: ({ image }) => z.object({
     name: z.string(),
     role: z.enum([
-      'Principal Investigator', 
-      'Professor', 
+      'Principal Investigator',
+      'Professor',
       'Associate Professor',
       'Assistant Professor',
       'Secretary',
       'IT Administrator',
-      'Postdoc', 
+      'Postdoc',
       'Research Assistant',
-      'PhD Student', 
+      'PhD Student',
       'Off-Campus PhD Student',
-      'Master Student', 
+      'Master Student',
       'Bachelor Student',
       'Hiwi',
       'Alumni'
@@ -65,7 +65,6 @@ const news = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.date(),
-    summary: z.string().optional(),
   }),
 });
 
