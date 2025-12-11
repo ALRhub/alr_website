@@ -1,7 +1,7 @@
 ---
 name: "Test Hiwi"
 role: "Hiwi"
-avatar: "../../assets/avatar-alex.jpg"
+avatar: "../../assets/avatars/default.png"
 bio: ""
 email: "alex.morgan@university.edu"
 weight: 3

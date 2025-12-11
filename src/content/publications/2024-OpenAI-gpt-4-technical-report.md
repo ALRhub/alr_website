@@ -4,7 +4,7 @@ authors: ["OpenAI"]
 year: 2024
 venue: "ArXiv"
 type: "paper"
-cover: "../../assets/gpt4-cover.jpg"
+cover: "../../assets/papers/gpt4-cover.jpg"
 links:
   pdf: "https://arxiv.org/pdf/2303.08774.pdf"
   code: "https://github.com/openai/evals"

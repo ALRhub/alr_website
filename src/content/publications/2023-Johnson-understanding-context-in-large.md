@@ -4,7 +4,7 @@ authors: ["Sarah Johnson", "Wei Zhang", "Alex Smith"]
 year: 2023
 venue: "ACL 2023"
 type: "paper"
-cover: "../../assets/nlp-cover.jpg"
+cover: "../../assets/papers/nlp-cover.jpg"
 links:
   pdf: "https://arxiv.org/abs/2305.12345"
   code: "https://github.com/example/context-llm"

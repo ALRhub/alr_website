@@ -4,7 +4,7 @@ authors: ["Wei Zhang", "Jian Li", "Sarah Johnson"]
 year: 2025
 venue: "CVPR 2025"
 type: "paper"
-cover: "../../assets/vit-cover.jpg"
+cover: "../../assets/papers/vit-cover.jpg"
 links:
   pdf: "https://arxiv.org/abs/2501.00000"
   code: ""

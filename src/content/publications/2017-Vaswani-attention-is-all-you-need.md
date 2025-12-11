@@ -4,7 +4,7 @@ authors: ["Ashish Vaswani", "Noam Shazeer", "Niki Parmar", "Jakob Uszkoreit", "L
 year: 2017
 venue: "Advances in neural information processing systems"
 type: "paper"
-cover: "../../assets/transformer-cover.jpg"
+cover: "../../assets/papers/transformer-cover.jpg"
 links:
   pdf: "https://arxiv.org/pdf/1706.03762.pdf"
   code: "https://github.com/tensorflow/tensor2tensor"

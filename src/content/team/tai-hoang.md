@@ -2,7 +2,7 @@
 name: "Tai Hoang"
 role: "PhD Student"
 title: ["PhD Student"]
-avatar: "../../assets/avatar-tai.jpg"
+avatar: "../../assets/avatars/tai.jpg"
 bio: "Focusing on reinforcement learning and physical modelling with graphs."
 email: "tai.hoang@kit.edu"
 github: "https://github.com/thobotics"

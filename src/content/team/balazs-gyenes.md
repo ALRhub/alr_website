@@ -2,7 +2,7 @@
 name: "Balázs Gyenes"
 role: "PhD Student"
 title: ["PhD Student"]
-avatar: "../../assets/avatar-default.png"
+avatar: "../../assets/avatars/default.png"
 bio: "Reinforcement Learning."
 email: "balazs.gyenes@kit.edu"
 weight: 29

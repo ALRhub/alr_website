@@ -10,14 +10,10 @@ const __dirname = path.dirname(__filename);
 
 const BIB_FILE = path.join(process.cwd(), 'citations.bib');
 const PUBLICATIONS_DIR = path.join(process.cwd(), 'src', 'content', 'publications');
-const BOOKS_DIR = path.join(process.cwd(), 'src', 'content', 'books');
 
 // Ensure output directories exist
 if (!fs.existsSync(PUBLICATIONS_DIR)) {
   fs.mkdirSync(PUBLICATIONS_DIR, { recursive: true });
-}
-if (!fs.existsSync(BOOKS_DIR)) {
-  fs.mkdirSync(BOOKS_DIR, { recursive: true });
 }
 
 // Helper to clean BibTeX strings (remove braces)
@@ -63,22 +59,7 @@ function importBibtex() {
       return;
     }
 
-    const entryType = (entry.entryType || '').toLowerCase();
-    const isBook = entryType === 'book';
-    const OUTPUT_DIR = isBook ? BOOKS_DIR : PUBLICATIONS_DIR;
-    
-    let type = isBook ? 'book' : 'paper';
-    if (!isBook) {
-      if (entryType === 'patent') {
-        type = 'patent';
-      } else if (entryType === 'software') {
-        type = 'software';
-      } else if (entryType === 'misc') {
-        const howpublished = (tags.howpublished || '').toLowerCase();
-        if (howpublished.includes('patent')) type = 'patent';
-        if (howpublished.includes('software')) type = 'software';
-      }
-    }
+    let type = 'paper';
 
     const title = cleanString(tags.title);
     const year = parseInt(tags.year, 10);
@@ -90,11 +71,11 @@ function importBibtex() {
     // Extract additional fields
     // Cover image: check 'cover', 'image', 'figure'
     let cover = cleanString(tags.cover || tags.image || tags.figure || '');
-    const DEFAULT_COVER = '../../assets/paper-vision.jpg';
-
+    const DEFAULT_COVER = '../../assets/papers/paper-vision.jpg';
+    
     // Validate cover image existence
     if (cover) {
-      // Resolve path relative to src/content/publications or src/content/books
+      // Resolve path relative to src/content/publications
       // ../../assets/xxx.jpg -> src/assets/xxx.jpg
       const relativeToRoot = cover.replace('../../', 'src/');
       const absolutePath = path.join(process.cwd(), relativeToRoot);
@@ -150,7 +131,7 @@ function importBibtex() {
     const firstAuthor = authors.length > 0 ? authors[0].split(' ').pop() : 'unknown';
     const titleSlug = slugify(title, { lower: true, strict: true }).slice(0, 30);
     const filename = `${year}-${firstAuthor}-${titleSlug}.md`;
-    const filePath = path.join(OUTPUT_DIR, filename);
+    const filePath = path.join(PUBLICATIONS_DIR, filename);
 
     // Determine featured status
     let isFeatured = false;
@@ -175,8 +156,7 @@ function importBibtex() {
       `authors: [${authors.map(a => `"${a}"`).join(', ')}]`,
       `year: ${year}`,
       `venue: "${venue.replace(/"/g, '\\"')}"`,
-      // Only add type for publications, not books
-      isBook ? '' : `type: "${type}"`,
+      `type: "${type}"`,
       `cover: "${cover}"`,
       'links:',
       `  pdf: "${pdf}"`,
@@ -190,15 +170,14 @@ function importBibtex() {
       badges.length > 0 ? 'badges:' : '',
       ...badges.map(b => `  - { text: "${b.text}", type: "${b.type}" }`),
       `description: "${description.replace(/"/g, '\\"')}"`,
-      // Only add featured for publications, not books
-      isBook ? '' : `featured: ${isFeatured}`,
+      `featured: ${isFeatured}`,
       '---',
       '',
       description
     ].filter(line => line !== '').join('\n');
 
     fs.writeFileSync(filePath, frontmatter);
-    console.log(`Generated: ${filename} in ${isBook ? 'books' : 'publications'}`);
+    console.log(`Generated: ${filename} in publications`);
     count++;
   });
 

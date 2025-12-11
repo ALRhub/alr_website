@@ -4,7 +4,7 @@ authors: ["Emily Chen", "David Wang", "Michael Brown"]
 year: 2024
 venue: "NeurIPS 2024"
 type: "paper"
-cover: "../../assets/diffusion-cover.jpg"
+cover: "../../assets/papers/diffusion-cover.jpg"
 links:
   pdf: "https://arxiv.org/abs/2112.10752"
   code: "https://github.com/CompVis/latent-diffusion"

@@ -4,7 +4,7 @@ authors: ["Ian Goodfellow", "Jean Pouget-Abadie", "Mehdi Mirza", "Bing Xu", "Dav
 year: 2014
 venue: "NIPS"
 type: "paper"
-cover: "../../assets/gan-cover.jpg"
+cover: "../../assets/papers/gan-cover.jpg"
 links:
   pdf: "https://arxiv.org/abs/1406.2661"
   code: "https://github.com/goodfeli/adversarial"

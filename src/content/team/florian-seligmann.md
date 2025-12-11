@@ -2,16 +2,16 @@
 name: "Florian Seligmann"
 role: "PhD Student"
 title: ["PhD Student"]
-avatar: "../../assets/avatar-tai.jpg"
-bio: "Focusing on reinforcement learning and physical modelling with graphs."
-email: "tai.hoang@kit.edu"
-github: "https://github.com/thobotics"
-linkedin: "https://www.linkedin.com/in/thobotics"
-website: "https://thobotics.github.io"
-googleScholar: "https://scholar.google.com/citations?hl=en&user=_jAx5dsAAAAJ"
+avatar: "../../assets/avatars/florian.jpg"
+bio: "Vision-Language-Action Models, Imitation Learning, Uncertainty Quantification"
+email: "florian.seligmann@kit.edu"
+github: "https://github.com/Feuermagier"
+linkedin: "https://www.linkedin.com/in/florian-seligmann-8b9378251/"
+googleScholar: "https://scholar.google.com/citations?user=i8J7X_sAAAAJ"
 weight: 30
 ---
-I started my PhD at the Autonomous Learning Robot (ALR) group in June 2023 at KIT, under the supervision of Prof. Gerhard Neumann. Before that, I completed my Master at the Technical University of Munich and my Bachelor at the University of Information Technology in Vietnam, both majoring in [test](https://google.com) Computer Science .
+I started my PhD at the Autonomous Learning Robot (ALR) group in November 2025 at KIT, under the supervision of Prof. Gerhard Neumann.
+Before that, I completed my Bachelor's and Master's at KIT, both majoring in Computer Science.
 
-
-My research interest includes: *Graph Neural Networks*, *Physical Modelling*, *Reinforcement Learning*, and *Deformable Object Manipulation*.
+I primarily work on **Vision-Language-Action models**, focusing on **interactive learning** and **in-context-learning**.
+More generally, I am interested in robust **Imitation Learning** and **Uncertainty Quantification**.

@@ -4,7 +4,7 @@ authors: ["Kaiming He", "Xiangyu Zhang", "Shaoqing Ren", "Jian Sun"]
 year: 2016
 venue: "Proceedings of the IEEE conference on computer vision and pattern recognition"
 type: "paper"
-cover: "../../assets/resnet-cover.jpg"
+cover: "../../assets/papers/resnet-cover.jpg"
 links:
   pdf: "https://arxiv.org/pdf/1512.03385.pdf"
   code: "https://github.com/KaimingHe/deep-residual-networks"

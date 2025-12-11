@@ -2,7 +2,7 @@
 name: "Philipp Dahlinger"
 role: "PhD Student"
 title: ["PhD Student"]
-avatar: "../../assets/avatar-default.png"
+avatar: "../../assets/avatars/default.png"
 bio: "Bayesian Deep Learning, Variational Inference."
 email: "philipp.dahlinger@kit.edu"
 weight: 24

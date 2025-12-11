@@ -2,7 +2,7 @@
 name: "Aleksandar Taranovic"
 role: "PhD Student"
 title: ["PhD Student"]
-avatar: "../../assets/avatar-default.png"
+avatar: "../../assets/avatars/default.png"
 bio: "Human-Robot Interaction, Imitation Learning, Learning from Human Feedback."
 email: "aleksandar.taranovic@kit.edu"
 weight: 28

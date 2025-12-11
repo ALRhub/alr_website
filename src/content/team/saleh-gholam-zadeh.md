@@ -2,7 +2,7 @@
 name: "Saleh Gholam Zadeh"
 role: "Off-Campus PhD Student"
 title: ["Off-Campus PhD", "SAP"]
-avatar: "../../assets/avatar-default.png"
+avatar: "../../assets/avatars/default.png"
 bio: "Computer Networking, Deep Probabilistic Models"
 email: "saleh.gholam.zadeh@sap.com"
 weight: 52
