@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 
 const allMembers = await getCollection("team");
 const alumni = (await getCollection("alumni")).sort(
-  (a, b) => (a.data.weight || 100) - (b.data.weight || 100),
+  (a, b) => (b.data.order) - (a.data.order),
 );
 
 // Define groups based on domestic hierarchy + international standard

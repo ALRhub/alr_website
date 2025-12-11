@@ -65,7 +65,7 @@ const alumni = defineCollection({
     dates: z.string(),
     area: z.string(),
     nextDestination: z.string(),
-    weight: z.number().default(100),
+    order: z.number(),
   }),
 });
 
