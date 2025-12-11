@@ -44,8 +44,7 @@ const team = defineCollection({
       'Off-Campus PhD Student',
       'Master Student',
       'Bachelor Student',
-      'Hiwi',
-      'Alumni'
+      'Hiwi'
     ]),
     avatar: image(),
     bio: z.string().optional(), // Short bio for card
@@ -55,6 +54,17 @@ const team = defineCollection({
     github: z.string().optional(),
     twitter: z.string().optional(),
     googleScholar: z.string().optional(),
+    weight: z.number().default(100),
+  }),
+});
+
+const alumni = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/alumni" }),
+  schema: z.object({
+    name: z.string(),
+    dates: z.string(),
+    area: z.string(),
+    nextDestination: z.string(),
     weight: z.number().default(100),
   }),
 });
@@ -120,6 +130,7 @@ const robots = defineCollection({
 export const collections = {
   publications,
   team,
+  alumni,
   news,
   research,
   softwares,

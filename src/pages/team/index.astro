@@ -1,126 +1,199 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import TeamCard from '../../components/TeamCard.astro';
-import { getCollection } from 'astro:content';
+import Layout from "../../layouts/Layout.astro";
+import TeamCard from "../../components/TeamCard.astro";
+import { getCollection } from "astro:content";
 
-const allMembers = await getCollection('team');
+const allMembers = await getCollection("team");
+const alumni = (await getCollection("alumni")).sort(
+  (a, b) => (a.data.weight || 100) - (b.data.weight || 100),
+);
 
 // Define groups based on domestic hierarchy + international standard
 const groups = [
   {
-    id: 'faculty',
-    roles: ['Professor']
+    id: "faculty",
+    roles: ["Professor"],
   },
   {
-    id: 'staff',
-    roles: ['Secretary', 'IT Administrator']
+    id: "staff",
+    roles: ["Secretary", "IT Administrator"],
   },
   {
-    id: 'postdoc',
-    roles: ['Postdoc']
+    id: "postdoc",
+    roles: ["Postdoc"],
   },
   {
-    id: 'phd',
-    roles: ['PhD Student']
+    id: "phd",
+    roles: ["PhD Student"],
   },
   {
-    id: 'industryphd',
-    roles: ['Off-Campus PhD Student']
+    id: "industryphd",
+    roles: ["Off-Campus PhD Student"],
   },
   {
-    id: 'hiwi',
-    roles: ['Hiwi']
+    id: "hiwi",
+    roles: ["Hiwi"],
   },
   {
-    id: 'master',
-    roles: ['Master Student']
+    id: "master",
+    roles: ["Master Student"],
   },
   {
-    id: 'bachelor',
-    roles: ['Bachelor Student']
+    id: "bachelor",
+    roles: ["Bachelor Student"],
   },
-  {
-    id: 'alumni',
-    roles: ['Alumni']
-  }
 ];
 
 const getRolePriority = (role: string) => {
   const priorities: Record<string, number> = {
-    'Principal Investigator': 0,
-    'Professor': 1,
-    'Associate Professor': 2,
-    'Assistant Professor': 3,
-    'Secretary': 4,
-    'IT Administrator': 5,
-    'Postdoc': 6,
-    'PhD Student': 7,
-    'Off-Campus PhD Student': 8,
-    'Hiwi': 9,
-    'Master Student': 10,
-    'Bachelor Student': 11,
-    'Alumni': 12
+    "Principal Investigator": 0,
+    Professor: 1,
+    "Associate Professor": 2,
+    "Assistant Professor": 3,
+    Secretary: 4,
+    "IT Administrator": 5,
+    Postdoc: 6,
+    "PhD Student": 7,
+    "Off-Campus PhD Student": 8,
+    Hiwi: 9,
+    "Master Student": 10,
+    "Bachelor Student": 11,
   };
   return priorities[role] ?? 99;
 };
 
 // Group members
-const groupedMembers = groups.reduce((acc, group) => {
-  const members = allMembers
-    .filter(m => group.roles.includes(m.data.role))
-    .sort((a, b) => {
-      // Sort by Role Priority first (e.g. Prof before Assoc Prof)
-      const roleDiff = getRolePriority(a.data.role) - getRolePriority(b.data.role);
-      if (roleDiff !== 0) return roleDiff;
-      // Then by weight
-      return (a.data.weight || 100) - (b.data.weight || 100);
-    });
-  
-  if (members.length > 0) {
-    acc.push({
-      ...group,
-      members
-    });
-  }
-  return acc;
-}, [] as Array<{ id: string, roles: string[], members: typeof allMembers }>);
+const groupedMembers = groups.reduce(
+  (acc, group) => {
+    const members = allMembers
+      .filter((m) => group.roles.includes(m.data.role))
+      .sort((a, b) => {
+        // Sort by Role Priority first (e.g. Prof before Assoc Prof)
+        const roleDiff =
+          getRolePriority(a.data.role) - getRolePriority(b.data.role);
+        if (roleDiff !== 0) return roleDiff;
+        // Then by weight
+        return (a.data.weight || 100) - (b.data.weight || 100);
+      });
 
+    if (members.length > 0) {
+      acc.push({
+        ...group,
+        members,
+      });
+    }
+    return acc;
+  },
+  [] as Array<{ id: string; roles: string[]; members: typeof allMembers }>,
+);
 ---
 
 <Layout title="Team">
   <div class="max-w-7xl mx-auto px-4 py-12 sm:py-20">
     <div class="max-w-3xl mx-auto text-center mb-16">
       <h1 class="text-4xl font-bold text-gray-900 mb-4">Our Team</h1>
-      <p class="text-lg text-gray-600">
-        That's us.
-      </p>
+      <p class="text-lg text-gray-600">That's us.</p>
     </div>
 
     <div class="space-y-20">
-      {groupedMembers.map(group => (
-        <section>
-          <h2 class="text-2xl font-bold text-gray-900 mb-8 pl-4 border-l-4 border-blue-600">
-            {group.id === 'faculty' ? 'Faculty' :
-             group.id === 'postdoc' ? 'Postdoctoral Researchers' :
-             group.id === 'staff' ? 'Staffs' :
-             group.id === 'phd' ? 'PhD Students' :
-             group.id === 'industryphd' ? 'Off-Campus PhD Students' :
-             group.id === 'master' ? 'Master Students' :
-             group.id === 'bachelor' ? 'Bachelor Students' :
-             group.id === 'hiwi' ? 'Student Assistants' :
-             group.id === 'alumni' ? 'Alumni' : ''}
-          </h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
-            {group.members.map(member => (
-              <TeamCard member={member} />
-            ))}
-          </div>
-        </section>
-      ))}
+      {
+        groupedMembers.map((group) => (
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-8 pl-4 border-l-4 border-blue-600">
+              {group.id === "faculty"
+                ? "Faculty"
+                : group.id === "postdoc"
+                  ? "Postdoctoral Researchers"
+                  : group.id === "staff"
+                    ? "Staffs"
+                    : group.id === "phd"
+                      ? "PhD Students"
+                      : group.id === "industryphd"
+                        ? "Off-Campus PhD Students"
+                        : group.id === "master"
+                          ? "Master Students"
+                          : group.id === "bachelor"
+                            ? "Bachelor Students"
+                            : group.id === "hiwi"
+                              ? "Student Assistants"
+                              : group.id === "alumni"
+                                ? "Alumni"
+                                : ""}
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+              {group.members.map((member) => (
+                <TeamCard member={member} />
+              ))}
+            </div>
+          </section>
+        ))
+      }
 
-      {allMembers.length === 0 && (
-        <p class="text-gray-500 text-center py-12">No team members found. Add markdown files to src/content/team/</p>
-      )}
+      {
+        allMembers.length === 0 && (
+          <p class="text-gray-500 text-center py-12">
+            No team members found. Add markdown files to src/content/team/
+          </p>
+        )
+      }
     </div>
+  </div>
+
+  <div class="space-y-20 max-w-7xl mx-auto px-4 py-12 sm:py-20">
+    <h2
+      class="text-2xl font-bold text-gray-900 mb-8 pl-4 border-l-4 border-blue-600"
+    >
+      Alumni
+    </h2>
+
+    <table class="min-w-full text-left border-collapse">
+      <thead>
+        <tr>
+          <th
+            class="py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wide border-b-2 border-gray-100"
+          >
+            Name
+          </th>
+          <th
+            class="py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wide border-b-2 border-gray-100"
+          >
+            Research Area
+          </th>
+          <th
+            class="py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wide border-b-2 border-gray-100"
+          >
+            Dates
+          </th>
+          <th
+            class="py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wide border-b-2 border-gray-100"
+          >
+            Next Destination
+          </th>
+        </tr>
+      </thead>
+
+      <tbody class="text-gray-700">
+        {
+          alumni.map((alumnus) => {
+            return (
+              <tr class="hover:bg-gray-50 transition-colors duration-200">
+                <td class="py-4 px-4 border-b border-gray-100 align-middle">
+                  {alumnus.data.name}
+                </td>
+                <td class="py-4 px-4 border-b border-gray-100 align-middle text-gray-600">
+                  {alumnus.data.area}
+                </td>
+                <td class="py-4 px-4 border-b border-gray-100 align-middle text-gray-600">
+                  {alumnus.data.dates}
+                </td>
+                <td class="py-4 px-4 border-b border-gray-100 align-middle text-gray-600">
+                  {alumnus.data.nextDestination}
+                </td>
+              </tr>
+            );
+          })
+        }
+      </tbody>
+    </table>
   </div>
 </Layout>
