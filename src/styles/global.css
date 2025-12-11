@@ -24,21 +24,29 @@ p.info-text {
   @apply text-sm text-gray-500 leading-relaxed;
 }
 
-/* links */
+/* general links */
 a {
   @apply hover:text-blue-600;
+}
+
+div.prose {
+  /* Link styling: inherit color and text style, but add faint underline and hover effect */
+  @apply prose-a:no-underline prose-a:border-b prose-a:border-gray-300 prose-a:hover:text-blue-600 prose-a:text-inherit prose-a:font-[weight:inherit];
 }
 
 /* Custom Scrollbar for a cleaner look */
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   @apply bg-gray-50;
 }
+
 ::-webkit-scrollbar-thumb {
   @apply bg-gray-300 rounded-full;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-gray-400;
 }
@@ -47,9 +55,11 @@ a {
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
   @apply bg-gray-200 rounded-full;
 }
