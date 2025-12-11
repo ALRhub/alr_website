@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
 import { Icon } from "astro-icon/components";
+import Prose from '../../components/Prose.astro';
 
 export async function getStaticPaths() {
   const teamMembers = await getCollection('team');
@@ -73,9 +74,7 @@ const { name, role, avatar, email, website, linkedin, github, twitter, googleSch
         </div>
       </div>
     </div>
-
-    <div class="prose prose-lg prose-blue max-w-none text-gray-700">
-      <Content />
-    </div>
+    
+    <Prose><Content /></Prose>
   </div>
 </Layout>
