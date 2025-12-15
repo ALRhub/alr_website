@@ -1,7 +1,6 @@
 ---
 name: "Prof. Gerhard Neumann"
 role: "Professor"
-title: ["Head of ALR Group"]
 avatar: "../../assets/avatars/geri.jpg"
 bio: "Head of the Autonomous Learning Robot (ALR) group at KIT."
 email: "gerhard.neumann@kit.edu"

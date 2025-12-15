@@ -1,7 +1,6 @@
 ---
 name: "Ge Li"
 role: "PhD Student"
-title: ["PhD Student"]
 avatar: "../../assets/avatars/default.png"
 bio: "Deep Probabilistic Models, Imitation Learning, Movement Primitives."
 email: "ge.li@kit.edu"

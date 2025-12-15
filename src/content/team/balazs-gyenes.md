@@ -1,7 +1,6 @@
 ---
 name: "Balázs Gyenes"
 role: "PhD Student"
-title: ["PhD Student"]
 avatar: "../../assets/avatars/default.png"
 bio: "Reinforcement Learning."
 email: "balazs.gyenes@kit.edu"

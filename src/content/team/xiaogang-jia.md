@@ -1,7 +1,6 @@
 ---
 name: "Xiaogang Jia"
 role: "PhD Student"
-title: ["PhD Student"]
 avatar: "../../assets/avatars/default.png"
 bio: "Imitation Learning, Offline Reinforcement Learning."
 email: "xiaogang.jia@partner.kit.edu"

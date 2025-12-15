@@ -1,7 +1,6 @@
 ---
 name: "Florian Seligmann"
 role: "PhD Student"
-title: ["PhD Student"]
 avatar: "../../assets/avatars/florian.jpg"
 bio: "Vision-Language-Action Models, Imitation Learning, Uncertainty Quantification"
 email: "florian.seligmann@kit.edu"

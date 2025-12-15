@@ -1,7 +1,6 @@
 ---
 name: "Christine Brand"
 role: "Secretary"
-title: ["Secretary"]
 avatar: "../../assets/avatars/default.png"
 bio: "Administrative support for the ALR group."
 email: "christine.brand@kit.edu"

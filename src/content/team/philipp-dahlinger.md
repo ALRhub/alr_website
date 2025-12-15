@@ -1,7 +1,6 @@
 ---
 name: "Philipp Dahlinger"
 role: "PhD Student"
-title: ["PhD Student"]
 avatar: "../../assets/avatars/default.png"
 bio: "Graph Network Simulation, Meta-Learning, Bayesian Deep Learning."
 email: "philipp.dahlinger@kit.edu"

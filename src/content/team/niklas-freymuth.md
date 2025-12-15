@@ -1,7 +1,6 @@
 ---
 name: "Niklas Freymuth"
 role: "PhD Student"
-title: ["PhD Student"]
 avatar: "../../assets/avatars/default.png"
 bio: "Geometric Deep Learning, Imitation Learning, Multi-Agent Reinforcement Learning."
 email: "niklas.freymuth@kit.edu"

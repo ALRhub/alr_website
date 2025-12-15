@@ -1,7 +1,6 @@
 ---
 name: "Tai Hoang"
 role: "PhD Student"
-title: ["PhD Student"]
 avatar: "../../assets/avatars/tai.jpg"
 bio: "Focusing on reinforcement learning and physical modelling with graphs."
 email: "tai.hoang@kit.edu"
