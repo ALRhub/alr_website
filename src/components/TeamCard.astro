@@ -8,15 +8,6 @@ interface Props {
 
 const { member } = Astro.props;
 const { name, role, extra_affiliations, avatar, bio, email, website, linkedin, github, twitter, googleScholar } = member.data;
-
-// Color mapping for title badges
-const badgeColors = [
-  "text-blue-700 bg-blue-50 border-blue-100",
-  "text-purple-700 bg-purple-50 border-purple-100",
-  "text-emerald-700 bg-emerald-50 border-emerald-100",
-  "text-amber-700 bg-amber-50 border-amber-100",
-  "text-rose-700 bg-rose-50 border-rose-100"
-];
 ---
 
 <div class="group flex flex-col items-center text-center">

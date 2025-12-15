@@ -1,7 +1,7 @@
 ---
 name: "Saleh Gholam Zadeh"
 role: "Off-Campus PhD Student"
-title: ["Off-Campus PhD", "SAP"]
+extra_affiliations: ["SAP"]
 avatar: "../../assets/avatars/default.png"
 bio: "Computer Networking, Deep Probabilistic Models"
 email: "saleh.gholam.zadeh@sap.com"

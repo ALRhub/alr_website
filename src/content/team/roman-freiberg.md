@@ -1,7 +1,7 @@
 ---
 name: "Roman Freiberg"
 role: "Off-Campus PhD Student"
-title: ["Off-Campus PhD", "Bosch"]
+extra_affiliations: ["Bosch"]
 avatar: "../../assets/avatars/default.png"
 bio: "Transfer Learning, Computer Vision, Robot Grasping"
 email: "roman.freiberg@bosch.com"

@@ -1,7 +1,6 @@
 ---
 name: "Aleksandar Taranovic"
 role: "PhD Student"
-title: ["PhD Student"]
 avatar: "../../assets/avatars/default.png"
 bio: "Human-Robot Interaction, Imitation Learning, Learning from Human Feedback."
 email: "aleksandar.taranovic@kit.edu"

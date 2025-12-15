@@ -1,7 +1,7 @@
 ---
 name: "Andreas Boltres"
 role: "Off-Campus PhD Student"
-title: ["Off-Campus PhD", "SAP"]
+extra_affiliations: ["SAP"]
 avatar: "../../assets/avatars/default.png"
 bio: "Computer Networking, Geometric Deep Learning, Multi-Agent Reinforcement Learning"
 email: "andreas.boltres@sap.com"

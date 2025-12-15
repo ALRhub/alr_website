@@ -1,7 +1,6 @@
 ---
 name: "Xinkai Jiang"
 role: "PhD Student"
-title: ["PhD Student"]
 avatar: "../../assets/avatars/default.png"
 bio: "Imitation Learning, Human-Robot Interaction, Robot Grasping."
 email: "xinkai.jiang@kit.edu"
