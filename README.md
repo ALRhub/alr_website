@@ -46,7 +46,7 @@ You can copy an existing page, but make sure to adjust all metadata.
 
 
 ## 🛠️ Development
-You need `npm` to be installed.
+You need `npm` (version >= 18.20) to be installed (Note: The default version on Ubuntu 22.04 is too old! You will need [nvm](https://github.com/nvm-sh/nvm)).
 
 Start the local server with hot module replacement:
 ```bash
@@ -61,4 +61,4 @@ npm run build
 ```
 
 ## Icons
-We are using `astro-icon` with `tabler` icons for generic icons and `simple-icons` for brand icons.
+We are using `astro-icon` with `tabler` for generic icons and `simple-icons` for brand icons.
