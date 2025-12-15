@@ -46,6 +46,7 @@ const team = defineCollection({
       'Bachelor Student',
       'Hiwi'
     ]),
+    extra_affiliations: z.array(z.string()).default([]),
     avatar: image(),
     bio: z.string().optional(), // Short bio for card
     email: z.string().optional(),

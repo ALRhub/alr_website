@@ -1,12 +1,12 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getCollection, render } from 'astro:content';
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
 import { Icon } from "astro-icon/components";
-import Prose from '../../components/Prose.astro';
+import Prose from "../../components/Prose.astro";
 
 export async function getStaticPaths() {
-  const teamMembers = await getCollection('team');
-  return teamMembers.map(member => ({
+  const teamMembers = await getCollection("team");
+  return teamMembers.map((member) => ({
     params: { slug: member.id.replace(/\.[^/.]+$/, "") },
     props: { member },
   }));
@@ -14,67 +14,135 @@ export async function getStaticPaths() {
 
 const { member } = Astro.props;
 const { Content } = await render(member);
-const { name, role, avatar, email, website, linkedin, github, twitter, googleScholar } = member.data;
+const {
+  name,
+  role,
+  extra_affiliations,
+  avatar,
+  email,
+  website,
+  linkedin,
+  github,
+  twitter,
+  googleScholar,
+} = member.data;
 ---
 
 <Layout title={name}>
   <div class="max-w-4xl mx-auto px-4 py-12 sm:py-20">
-    <a href="/team" class="inline-flex items-center text-sm text-gray-500 hover:text-blue-600 mb-8 transition-colors">
+    <a
+      href="/team"
+      class="inline-flex items-center text-sm text-gray-500 hover:text-blue-600 mb-8 transition-colors"
+    >
       <Icon name="tabler:arrow-left" class="w-4 h-4 mr-1" /> Back to Team
     </a>
 
-    <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm mb-12">
+    <div
+      class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm mb-12"
+    >
       <div class="flex flex-col md:flex-row gap-8 items-start">
-        <div class="w-32 h-32 md:w-48 md:h-48 rounded-2xl overflow-hidden bg-gray-100 shrink-0 mx-auto md:mx-0">
+        <div
+          class="w-32 h-32 md:w-48 md:h-48 rounded-2xl overflow-hidden bg-gray-100 shrink-0 mx-auto md:mx-0"
+        >
           <img src={avatar.src} alt={name} class="w-full h-full object-cover" />
         </div>
-        
+
         <div class="flex-grow text-center md:text-left">
           <h1 class="text-3xl font-bold text-gray-900 mb-2">{name}</h1>
-          <p class="text-xl text-blue-600 font-medium mb-6">{role}</p>
-          
+          <p class="text-xl text-blue-600 font-medium mb-6 flex gap-2 items-center">
+            {role}
+
+            <!-- Extra affiliations -->
+            {
+              extra_affiliations.map((affiliation) => {
+                return (
+                  <span
+                    class={`px-2 py-0.5 rounded-full  border gap-1 text-sm text-gray-500`}
+                  >
+                    {affiliation}
+                  </span>
+                );
+              })
+            }
+          </p>
+
           <div class="flex flex-wrap justify-center md:justify-start gap-3">
-            {email && (
-              <a href={`mailto:${email}`} class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm">
-                <Icon name="tabler:mail" class="w-4 h-4" />
-                <span>Email</span>
-              </a>
-            )}
-            {website && (
-              <a href={website} target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm">
-                <Icon name="tabler:world" class="w-4 h-4" />
-                <span>Website</span>
-              </a>
-            )}
-            {linkedin && (
-              <a href={linkedin} target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm">
-                <Icon name="simple-icons:linkedin" class="w-4 h-4" />
-                <span>LinkedIn</span>
-              </a>
-            )}
-            {github && (
-              <a href={github} target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm">
-                <Icon name="simple-icons:github" class="w-4 h-4" />
-                <span>GitHub</span>
-              </a>
-            )}
-            {twitter && (
-              <a href={twitter} target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm">
-                <Icon name="simple-icons:twitter" class="w-4 h-4" />
-                <span>Twitter</span>
-              </a>
-            )}
-            {googleScholar && (
-              <a href={googleScholar} target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm">
-                <Icon name="simple-icons:googlescholar" class="w-4 h-4" />
-                <span>Scholar</span>
-              </a>
-            )}
+            {
+              email && (
+                <a
+                  href={`mailto:${email}`}
+                  class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm"
+                >
+                  <Icon name="tabler:mail" class="w-4 h-4" />
+                  <span>Email</span>
+                </a>
+              )
+            }
+            {
+              website && (
+                <a
+                  href={website}
+                  target="_blank"
+                  class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm"
+                >
+                  <Icon name="tabler:world" class="w-4 h-4" />
+                  <span>Website</span>
+                </a>
+              )
+            }
+            {
+              linkedin && (
+                <a
+                  href={linkedin}
+                  target="_blank"
+                  class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm"
+                >
+                  <Icon name="simple-icons:linkedin" class="w-4 h-4" />
+                  <span>LinkedIn</span>
+                </a>
+              )
+            }
+            {
+              github && (
+                <a
+                  href={github}
+                  target="_blank"
+                  class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm"
+                >
+                  <Icon name="simple-icons:github" class="w-4 h-4" />
+                  <span>GitHub</span>
+                </a>
+              )
+            }
+            {
+              twitter && (
+                <a
+                  href={twitter}
+                  target="_blank"
+                  class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm"
+                >
+                  <Icon name="simple-icons:twitter" class="w-4 h-4" />
+                  <span>Twitter</span>
+                </a>
+              )
+            }
+            {
+              googleScholar && (
+                <a
+                  href={googleScholar}
+                  target="_blank"
+                  class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm"
+                >
+                  <Icon name="simple-icons:googlescholar" class="w-4 h-4" />
+                  <span>Scholar</span>
+                </a>
+              )
+            }
           </div>
         </div>
       </div>
     </div>
-    
+
     <Prose><Content /></Prose>
   </div>
 </Layout>

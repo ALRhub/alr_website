@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { member } = Astro.props;
-const { name, role, avatar, bio, email, website, linkedin, github, twitter, googleScholar } = member.data;
+const { name, role, extra_affiliations, avatar, bio, email, website, linkedin, github, twitter, googleScholar } = member.data;
 
 // Color mapping for title badges
 const badgeColors = [
@@ -68,10 +68,26 @@ const badgeColors = [
     </div>
   </div>
 
-  <!-- Info -->
+  <!-- Name -->
   <a href={`/team/${member.id.replace(/\.[^/.]+$/, "")}`} class="hover:underline decoration-blue-600 underline-offset-2 mb-2">
     <h3 class="text-lg font-semibold text-gray-900">{name}</h3>
   </a>
-  
+
+  <!-- Extra affiliations -->
+  <div class="flex items-center flex-wrap gap-2 text-sm text-gray-500 mb-2">
+      {
+          extra_affiliations.map((affiliation) => {
+              return (
+                  <span
+                      class={`px-2 py-0.5 rounded-full text-xs font-medium border flex items-center gap-1`}
+                  >
+                      {affiliation}
+                  </span>
+              );
+          })
+      }
+  </div>
+
+  <!-- Info -->
   {bio && <p class="text-sm text-gray-500 line-clamp-2 px-2">{bio}</p>}
 </div>
