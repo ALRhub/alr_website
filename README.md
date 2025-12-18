@@ -62,3 +62,6 @@ npm run build
 
 ## Icons
 We are using `astro-icon` with `tabler` for generic icons and `simple-icons` for brand icons.
+
+## OpenGraph Thumbnails
+Thumbnails for OpenGraph (ie, the image that you see when you link to the page on Slack) are generated automatically in `og/[...slug].png.ts`.

@@ -3,8 +3,8 @@ import heroImage from './assets/hero-real.jpg';
 export const SITE = {
   website: 'https://scholar-lite-demo.netlify.app/', // Replace with your actual deployed URL
   author: 'Autonomous Learning Robots Lab @ KIT',
-  description: 'Autonomous Learning Robots Lab @ Karlsruhe Institute of Technology',
-  title: 'Scholar-Lite',
+  description: 'Robot Learning and Generative Modeling',
+  title: 'Autonomous Learning Robots Lab @ KIT',
   ogImage: 'astropaper-og.jpg',
   lightAndDarkMode: true,
   postPerPage: 3,
