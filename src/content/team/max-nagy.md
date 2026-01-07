@@ -1,7 +1,7 @@
 ---
 name: "Max Nagy"
 role: "External PhD Student @ FZI"
-avatar: "../../assets/avatars/default.png"
+avatar: "../../assets/avatars/max_square.png"
 bio: "Reinforcement Learning, Real World Robotics, Heavy Machines"
 email: "nagy@fzi.de"
 weight: 23
