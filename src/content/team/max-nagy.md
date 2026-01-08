@@ -4,6 +4,7 @@ role: "PhD Student"
 extra_affiliations: ["FZI"]
 avatar: "../../assets/avatars/max_square.png"
 bio: "Reinforcement Learning, Real World Robotics, Heavy Machines"
+joinedIn: "2025"
 email: "nagy@fzi.de"
 weight: 23
 ---
