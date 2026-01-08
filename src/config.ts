@@ -15,13 +15,11 @@ export const SITE = {
   university: 'Karlsruhe Institute of Technology',
   logo: '/assets/alr-logo.png', // Logo path
   avatar: '/assets/alr-logo.png', // Avatar for SEO/Schema
-  email: 'gerhard.neumann@kit.edu', // Contact email for Join Us page
 
-  // Hero Section (Home Page) - Main content does not need to be translated for 8 languages by default
+  // Hero Section (Home Page)
   hero: {
-    title: 'Autonomous Learning Robots Lab.',
+    title: 'Autonomous Learning Robots Lab',
     subtitle: 'We do research on robot learning.',
-    action: 'View Publications', // Optional call to action text
     image: heroImage, // Hero image path
   },
 

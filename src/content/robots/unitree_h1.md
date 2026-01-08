@@ -1,5 +1,5 @@
 ---
-name: "Unitree H1"
+name: "Unitree H1-2"
 teaser: "../../assets/avatars/default.png"
 weight: 3
 ---
