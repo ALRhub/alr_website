@@ -32,14 +32,10 @@ const team = defineCollection({
   schema: ({ image }) => z.object({
     name: z.string(),
     role: z.enum([
-      'Principal Investigator',
       'Professor',
-      'Associate Professor',
-      'Assistant Professor',
       'Secretary',
       'IT Administrator',
       'Postdoc',
-      'Research Assistant',
       'PhD Student',
       'Off-Campus PhD Student',
       'Master Student',
@@ -49,6 +45,7 @@ const team = defineCollection({
     extra_affiliations: z.array(z.string()).default([]),
     avatar: image(),
     bio: z.string().optional(), // Short bio for card
+    joinedIn: z.string().optional(),
     email: z.string().optional(),
     website: z.string().optional(),
     linkedin: z.string().optional(),

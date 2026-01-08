@@ -4,7 +4,7 @@
 *   **Content**: All editable content (News, Team, Research info) lives in `src/content/`.
 
 ## How do I add...
-### ...news
+### ...news?
 Create a new page in [src/content/news](src/content/news).
 You can copy an existing page, but make sure to adjust all metadata.
 To keep everything sorted, prefix the page name with the current year.
@@ -29,6 +29,23 @@ Production builds run this automatically.
 ### ...a new team member?
 Create a new page in [src/content/team](src/content/team).
 You can copy an existing page, but make sure to adjust all metadata.
+The `role` field is a string enum and needs to be one of
+```
+Professor
+Secretary
+IT Administrator
+Postdoc
+PhD Student
+Off-Campus PhD Student
+Master Student
+Bachelor Student
+Hiwi
+```
+If you are an off-campus (external) student, please also add our external affiliations to `extra_affiliations`.
+
+Optionally, you can add the date (year or month and year) when you joined in the `joinedIn` field.
+It will be formatted as `Joined in {joinedIn}`.
+
 There are various metadata tags for external links available (`email`, `website`, `linkedin`, `github`, `twitter`, `googleScholar`).
 Also remember to add a picture of you in [src/assets/avatars](src/assets/avatars).
 Make sure that the image isn't too high-resolution (e.g. 512px x 512px) and ideally square.
