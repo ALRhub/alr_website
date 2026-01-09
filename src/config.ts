@@ -8,7 +8,6 @@ export const SITE = {
   ogImage: 'astropaper-og.jpg',
   lightAndDarkMode: true,
   postPerPage: 3,
-  scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 
   // Lab Info
   labName: 'Autonomous Learning Robots',
@@ -41,10 +40,3 @@ export const LOGO_IMAGE = {
   width: 216,
   height: 46,
 };
-
-export const SOCIALS = [
-  {
-    link: 'https://github.com/fjd2004711/scholar-lite',
-    active: true,
-  },
-];
