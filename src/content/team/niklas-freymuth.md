@@ -1,9 +1,13 @@
 ---
 name: "Niklas Freymuth"
 role: "PhD Student"
-avatar: "../../assets/avatars/default.png"
-bio: "Geometric Deep Learning, Imitation Learning, Multi-Agent Reinforcement Learning."
+avatar: "../../assets/avatars/niklas.jpeg"
+bio: "Graph Network Simulators, Multi-Agent Reinforcement Learning, Large Language Models"
 email: "niklas.freymuth@kit.edu"
-weight: 22
+github: "https://github.com/niklasfreymuth"
+linkedin: "https://www.linkedin.com/in/niklasfreymuth/"
+website: "https://nfreymuth.com/"
+googleScholar: "https://scholar.google.com/citations?user=FK1DbrcAAAAJ"
+weight: 28
 ---
-PhD student focusing on geometric deep learning, imitation learning, and multi-agent reinforcement learning.
+Last-year PhD student on Graph Neural Networks, physical simulation and mesh refinement, and recently large language modeling.
