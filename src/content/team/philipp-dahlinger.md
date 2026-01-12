@@ -1,7 +1,7 @@
 ---
 name: "Philipp Dahlinger"
 role: "PhD Student"
-avatar: "../../assets/avatars/default.png"
+avatar: "../../assets/avatars/phd.png"
 bio: "Graph Network Simulation, Meta-Learning, Bayesian Deep Learning."
 email: "philipp.dahlinger@kit.edu"
 weight: 24
