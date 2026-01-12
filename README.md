@@ -41,7 +41,7 @@ Master Student
 Bachelor Student
 Hiwi
 ```
-If you are an off-campus (external) student, please also add our external affiliations to `extra_affiliations`.
+If you are an off-campus (external) student, please also add your external affiliations to `extra_affiliations`.
 
 Optionally, you can add the date (year or month and year) when you joined in the `joinedIn` field.
 It will be formatted as `Joined in {joinedIn}`.
