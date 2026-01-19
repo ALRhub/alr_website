@@ -1,10 +1,33 @@
 ---
-import { getCollection, render } from 'astro:content';
-import NewsItem from './NewsItem.astro';
+import { getCollection } from "astro:content";
+import NewsItem from "./NewsItem.astro";
 
-const allNews = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+interface Props {
+    filter?: string;
+    title?: boolean;
+}
+
+const { filter, title = true } = Astro.props;
+
+const allNews = (
+    await getCollection("news", ({ data }) => {
+        return filter ? data.area === filter : true;
+    })
+).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<div class="border-l-2 border-gray-100 pl-8 space-y-12">
-    {allNews.map(item => <NewsItem entry={item} />)}
+<div>
+    {
+        title && allNews.length > 0 && (
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">
+                    Recent News
+                </h2>
+            </div>
+        )
+    }
+
+    <div class="border-l-2 border-gray-100 pl-8 space-y-12 ml-4">
+        {allNews.map((item) => <NewsItem entry={item} />)}
+    </div>
 </div>

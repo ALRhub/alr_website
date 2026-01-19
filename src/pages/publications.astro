@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import PublicationItem from '../components/PublicationItem.astro';
 import { getCollection } from 'astro:content';
+import PapersList from '../components/PapersList.astro';
 
 const allPapers = (await getCollection('publications')).sort((a, b) => b.data.year - a.data.year);
 const years = [...new Set(allPapers.map(p => p.data.year))];
@@ -15,24 +16,6 @@ const years = [...new Set(allPapers.map(p => p.data.year))];
         A collection of our research papers, conference proceedings, and journal articles.
       </p>
     </div>
-
-    <div class="space-y-12">
-      {years.map(year => (
-        <div class="relative">
-          <div class="sticky top-20 z-10 bg-white/90 backdrop-blur py-2 mb-4 border-b border-gray-100">
-            <h2 class="text-2xl font-bold text-gray-900">{year}</h2>
-          </div>
-          <div class="space-y-2">
-            {allPapers.filter(p => p.data.year === year).map(paper => (
-              <PublicationItem entry={paper} />
-            ))}
-          </div>
-        </div>
-      ))}
-      
-      {allPapers.length === 0 && (
-        <p class="text-gray-500 text-center py-12">No publications found. Add markdown files to src/content/publications/</p>
-      )}
-    </div>
+    <PapersList title={false} />
   </div>
 </Layout>

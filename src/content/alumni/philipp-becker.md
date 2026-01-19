@@ -2,6 +2,6 @@
 name: Philipp Becker
 dates: 01/2020 - 10/2025
 area: Reinforcement Learning, Variational Inference
-nextDestination: Postdoc at FAIR @ Meta (Paris)
+nextDestination: Postdoc at Meta FAIR (Paris)
 order: 10
 ---
