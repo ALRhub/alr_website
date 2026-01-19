@@ -1,6 +1,6 @@
 ---
 name: "Unitree H1-2"
-teaser: "../../assets/avatars/default.png"
+teaser: "../../assets/avatars/h1.jpg"
 weight: 3
 ---
-A strong 7-DoF robotic arm. We have various grippers and hands available.
+A full-size universal humanoid robot. We use it primarily for bimanual manipulation tasks.

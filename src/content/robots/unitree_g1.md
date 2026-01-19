@@ -1,6 +1,6 @@
 ---
 name: "Unitree G1"
-teaser: "../../assets/avatars/default.png"
+teaser: "../../assets/avatars/g1.jpg"
 weight: 3
 ---
-A strong 7-DoF robotic arm. We have various grippers and hands available.
+A child-sized humanoid. Used for locomotion and mobile manipulation tasks. We have two available.

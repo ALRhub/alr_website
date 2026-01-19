@@ -4,9 +4,9 @@ description: "Developing advanced graph-based algorithms for physics-consistent 
 cover: "../../assets/hero-real.jpg"
 order: 3
 ---
-# ML for Simulation
+# Machine Learning for Simulation
 
-The "Graph Guys", as we like to call ourselves, focuses on the intersection of deep learning and physical sciences
+The "Graph Guys", as we like to call ourselves, focuses on the intersection of deep learning and physical sciences.
 We specialize in Geometric Deep Learning and Graph Neural Networks (GNNs), leveraging these architectures to model the complex, non-Euclidean relationships inherent in scientific data.
 This data includes irregular meshes for structural mechanics and dynamic particle interactions in fluid systems.
 
