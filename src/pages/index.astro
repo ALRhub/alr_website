@@ -101,7 +101,7 @@ const researchAreas = (await getCollection("research"))
   <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-end mb-8">
-        <h2 class="text-3xl font-bold text-gray-900">Research Areas</h2>
+        <h2>Research Areas</h2>
         <a
           href="/research"
           class="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 group"
@@ -129,9 +129,9 @@ const researchAreas = (await getCollection("research"))
               )}
 
               <div class="p-6">
-                <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                <h3 class="group-hover:text-blue-600 transition-colors">
                   {area.data.title}
-                </h2>
+                </h3>
                 <p class="text-gray-600 text-sm mb-4 line-clamp-3">
                   {area.data.description}
                 </p>
@@ -154,7 +154,7 @@ const researchAreas = (await getCollection("research"))
   <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-end mb-8">
-        <h2 class="text-3xl font-bold text-gray-900">News</h2>
+        <h2>News</h2>
       </div>
       <NewsTimeline title={false}/>
     </div>

@@ -16,6 +16,5 @@ badges:
   - { text: "Best Student Paper", type: "gold" }
 description: "Vision Transformers (ViT) typically require massive datasets to outperform CNNs. We propose a novel regularization technique and architecture modification that allows ViTs to train effectively on small datasets (e.g., CIFAR-10, Flowers-102) from scratch, achieving state-of-the-art performance."
 featured: false
-area: imitation_learning
 ---
 Vision Transformers (ViT) typically require massive datasets to outperform CNNs. We propose a novel regularization technique and architecture modification that allows ViTs to train effectively on small datasets (e.g., CIFAR-10, Flowers-102) from scratch, achieving state-of-the-art performance.

@@ -49,7 +49,7 @@ const {
         </div>
 
         <div class="flex-grow text-center md:text-left">
-          <h1 class="text-3xl font-bold text-gray-900 mb-2">{name}</h1>
+          <h2 class="mb-2">{name}</h2>
           <p class="text-xl text-blue-600 font-medium flex gap-2 items-center">
             {role}
 
@@ -68,7 +68,7 @@ const {
           </p>
 
           <!-- Dates -->
-          {joinedIn && <h1 class="text-sm text-gray-500 mb-2">Joined in {joinedIn}</h1>}
+          {joinedIn && <p class="text-sm text-gray-500 mb-2">Joined in {joinedIn}</p>}
 
           <!-- Links -->
           <div class="flex flex-wrap justify-center md:justify-start gap-3 mt-6">

@@ -17,7 +17,7 @@ const { Content } = await render(entry);
     <time class="block text-sm text-gray-500 mb-2"
         >{entry.data.date.toISOString().split("T")[0]}</time
     >
-    <h2 class="text-xl font-bold text-gray-900 mb-2">{entry.data.title}</h2>
+    <h3 class="mb-2">{entry.data.title}</h3>
     <!-- {
         entry.data.summary && (
             <p class="text-gray-600 mb-4">{entry.data.summary}</p>

@@ -29,9 +29,9 @@ const researchAreas = (await getCollection('research')).sort((a, b) => a.data.or
           )}
           
           <div class="p-6">
-            <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+            <h3 class="mb-3 group-hover:text-blue-600 transition-colors">
               {area.data.title}
-            </h2>
+            </h>
             <p class="text-gray-600 text-sm mb-4 line-clamp-3">
               {area.data.description}
             </p>

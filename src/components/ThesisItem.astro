@@ -40,25 +40,13 @@ const formatType = (type: string) => {
 >
     <div class="p-6 flex flex-col space-y-2">
         <!-- Title -->
-        <h2
-            class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors"
-        >
+        <h3 class="mb-3 group-hover:text-blue-600 transition-colors">
             {title}
-        </h2>
+        </h3>
 
         <!-- Start date / assigned student -->
         <div class="text-gray-600 text-sm leading-relaxed">
-            {
-                assigned ? (
-                    <p>
-                        Student: {student}
-                    </p>
-                ) : (
-                    <p>
-                        Start: {start}
-                    </p>
-                )
-            }
+            {assigned ? <p>Student: {student}</p> : <p>Start: {start}</p>}
         </div>
 
         <!-- Types -->

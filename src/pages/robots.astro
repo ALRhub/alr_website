@@ -10,9 +10,9 @@ const robots = (await getCollection("robots")).sort(
 ---
 
 <Layout title="Robots">
-    <div class="max-w-7xl mx-auto px-4 py-12 sm:py-20 flex flex-col items-center gap-50">
-        <div class="max-w-3xl mx-auto text-center mb-16">
-            <h1 class="text-4xl font-bold text-gray-900 mb-4">
+    <div class="max-w-7xl mx-auto px-4 py-12 sm:py-20">
+        <div class="max-w-3xl mx-auto text-center mb-10">
+            <h1 class="mb-4">
                 Robotic Platforms
             </h1>
             <p class="text-lg text-gray-600">
@@ -20,11 +20,11 @@ const robots = (await getCollection("robots")).sort(
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20">
             {robots.map((robot) => <RobotItem entry={robot} />)}
         </div>
 
-        <div>
+        <div class="flex justify-around mt-40">
             <NewsTimeline filter="robots" />
         </div>
     </div>

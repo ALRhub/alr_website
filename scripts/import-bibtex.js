@@ -102,6 +102,7 @@ function importBibtex() {
     const slides = cleanString(tags.slides || tags.presentation || tags.ppt || '');
     const video = cleanString(tags.video || tags.recording || '');
     const demo = cleanString(tags.demo || '');
+    const area = cleanString(tags.area || '');
 
     // Badges parsing
     const badges = [];
@@ -171,6 +172,7 @@ function importBibtex() {
       ...badges.map(b => `  - { text: "${b.text}", type: "${b.type}" }`),
       `description: "${description.replace(/"/g, '\\"')}"`,
       `featured: ${isFeatured}`,
+      `area: ${area}`,
       '---',
       '',
       description
