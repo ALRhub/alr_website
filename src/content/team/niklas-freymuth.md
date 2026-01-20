@@ -3,6 +3,8 @@ name: "Niklas Freymuth"
 role: "PhD Student"
 avatar: "../../assets/avatars/niklas.jpeg"
 bio: "Graph Network Simulators, Multi-Agent Reinforcement Learning, Large Language Models"
+joinedIn: "2021"
+areas: ["ml_for_simulation"]
 email: "niklas.freymuth@kit.edu"
 github: "https://github.com/niklasfreymuth"
 linkedin: "https://www.linkedin.com/in/niklasfreymuth/"

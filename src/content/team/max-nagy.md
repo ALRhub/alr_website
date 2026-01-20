@@ -5,6 +5,7 @@ extra_affiliations: ["FZI"]
 avatar: "../../assets/avatars/max_square.png"
 bio: "Reinforcement Learning, Real World Robotics, Heavy Machines"
 joinedIn: "2025"
+areas: ["reinforcement_learning"]
 email: "nagy@fzi.de"
 weight: 23
 ---

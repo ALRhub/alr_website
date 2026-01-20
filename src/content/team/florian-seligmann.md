@@ -4,6 +4,7 @@ role: "PhD Student"
 avatar: "../../assets/avatars/florian.jpg"
 bio: "Vision-Language-Action Models, Imitation Learning, Uncertainty Quantification"
 joinedIn: "November 2025"
+areas: ["imitation_learning"]
 email: "florian.seligmann@kit.edu"
 github: "https://github.com/Feuermagier"
 linkedin: "https://www.linkedin.com/in/florian-seligmann-8b9378251/"

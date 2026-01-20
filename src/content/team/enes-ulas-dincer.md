@@ -3,6 +3,7 @@ name: "Enes Ulas Dincer"
 role: "PhD Student"
 avatar: "../../assets/avatars/enes.jpg"
 bio: "Imitation Learning, and Human-Robot Interaction (HRI)"
+areas: ["imitation_learning"]
 email: "enes.dincer@kit.edu"
 github: "https://github.com/EnesUlasDincer"
 linkedin: "https://www.linkedin.com/in/enesulasdincer/"

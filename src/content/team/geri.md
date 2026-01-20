@@ -3,6 +3,7 @@ name: "Prof. Gerhard Neumann"
 role: "Professor"
 avatar: "../../assets/avatars/geri.jpg"
 bio: "Head of the Autonomous Learning Robot (ALR) group at KIT."
+areas: []
 email: "gerhard.neumann@kit.edu"
 linkedin: "https://www.linkedin.com/in/gerhard-neumann-661930124/"
 googleScholar: "https://scholar.google.com/citations?user=GL360kMAAAAJ&hl=en"

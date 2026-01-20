@@ -4,6 +4,7 @@ role: "PhD Student"
 avatar: "../../assets/avatars/emiliyan.jpg"
 bio: "Vision-Language-Action Models, Reinforcement Learning"
 joinedIn: "April 2025"
+areas: ["imitation_learning", "reinforcement_learning"]
 email: "emiliyan.gospodinov@kit.edu"
 github: "https://github.com/EmiliyanGospodinov"
 linkedin: "https://www.linkedin.com/in/emiliyan-gospodinov-09579b156/"

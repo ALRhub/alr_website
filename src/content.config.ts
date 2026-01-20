@@ -47,6 +47,7 @@ const team = defineCollection({
     avatar: image(),
     bio: z.string().optional(), // Short bio for card
     joinedIn: z.string().optional(),
+    areas: z.array(z.string()),
     email: z.string().optional(),
     website: z.string().optional(),
     linkedin: z.string().optional(),

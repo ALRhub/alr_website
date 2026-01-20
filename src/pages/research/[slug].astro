@@ -1,12 +1,13 @@
 ---
-import NewsTimeline from '../../components/NewsTimeline.astro';
-import PapersList from '../../components/PapersList.astro';
-import Layout from '../../layouts/Layout.astro';
-import { getCollection, render } from 'astro:content';
+import NewsTimeline from "../../components/NewsTimeline.astro";
+import PapersList from "../../components/PapersList.astro";
+import TeamCard from "../../components/TeamCard.astro";
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-  const researchAreas = await getCollection('research');
-  return researchAreas.map(area => ({
+  const researchAreas = await getCollection("research");
+  return researchAreas.map((area) => ({
     params: { slug: area.id.replace(/\.[^/.]+$/, "") },
     props: { area },
   }));
@@ -14,21 +15,35 @@ export async function getStaticPaths() {
 
 const { area } = Astro.props;
 const { Content } = await render(area);
+
+const team = (
+  await getCollection("team", ({ data }) => {
+    return data.areas.includes(area.id);
+  })
+).sort((a, b) => a.data.weight - b.data.weight);
 ---
 
 <Layout title={area.data.title}>
   <article class="max-w-4xl mx-auto px-4 py-12 sm:py-20">
-    <a href="/#research" class="inline-flex items-center text-sm text-gray-500 hover:text-blue-600 mb-8 transition-colors">
+    <a
+      href="/#research"
+      class="inline-flex items-center text-sm text-gray-500 hover:text-blue-600 mb-8 transition-colors"
+    >
       &larr; Back to Research
     </a>
 
     <header class="mb-12">
-      <h1>{area.data.title}</h1>
-      {area.data.cover && (
-        <div class="w-full h-64 sm:h-96 rounded-2xl overflow-hidden bg-gray-100 mb-8">
-          <img src={area.data.cover.src} alt={area.data.title} class="w-full h-full object-cover" />
-        </div>
-      )}
+      {
+        area.data.cover && (
+          <div class="w-full h-64 sm:h-96 rounded-2xl overflow-hidden bg-gray-100 mb-8">
+            <img
+              src={area.data.cover.src}
+              alt={area.data.title}
+              class="w-full h-full object-cover"
+            />
+          </div>
+        )
+      }
       <!-- <p class="text-xl text-gray-600 leading-relaxed">{area.data.description}</p> -->
     </header>
 
@@ -36,12 +51,30 @@ const { Content } = await render(area);
       <Content />
     </div>
 
-    <div class="mt-40">
-      <NewsTimeline filter={area.id}></NewsTimeline>
+    <h2>Members</h2>
+    <div class="relative">
+      <div
+        class="flex overflow-x-auto md:grid md:grid-cols-4 md:overflow-visible md:gap-4 pb-4 snap-x snap-mandatory"
+      >
+        {
+          team.map((member) => (
+            <div class="flex-none w-64 md:w-auto snap-center">
+              <TeamCard member={member} />
+            </div>
+          ))
+        }
+      </div>
+      <!-- <div
+        class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent opacity-100 transition-opacity group-hover:opacity-0"
+      > -->
     </div>
 
-    <div class="mt-40">
-      <PapersList filter={area.id}></PapersList>
+    <div class="mt-20">
+      <NewsTimeline filter={area.id} />
+    </div>
+
+    <div class="mt-20">
+      <PapersList filter={area.id} />
     </div>
   </article>
 </Layout>
