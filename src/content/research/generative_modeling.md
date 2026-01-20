@@ -4,13 +4,12 @@ description: "Our research in computer vision focuses on object detection, segme
 cover: "../../assets/hero-real.jpg"
 order: 4
 ---
-# Computer Vision Research
 
-Our lab works on state-of-the-art computer vision algorithms.
+# Generative Modeling
+
+TODO
 
 ## Key Areas
-- Object Detection
-- Semantic Segmentation
-- 3D Vision
-
-We apply these technologies to real-world problems such as autonomous driving and medical imaging.
+- Sampling Methods
+- Diffusion Models
+- ???
