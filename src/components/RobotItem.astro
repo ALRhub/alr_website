@@ -23,9 +23,8 @@ const { Content } = await render(entry);
         />
     </div>
 
-    <h3>
-        {entry.data.name}
-    </h3>
+    <h3>{entry.data.name}</h3>
+    <div class="mb-4"><p class="text-sm text-gray-500 line-clamp-2 px-2">Count: {entry.data.count}</p></div>
 
     <!-- TODO content is not properly formatted. should we add a separate page per robot? -->
     <p class="text-sm text-gray-500 line-clamp-2 px-2"><Content /></p>

@@ -124,6 +124,7 @@ const robots = defineCollection({
   schema: ({ image }) => z.object({
     name: z.string(),
     teaser: image(),
+    count: z.number(),
     weight: z.number().default(100),
   }),
 });
