@@ -11,7 +11,7 @@ const { filter, title = true } = Astro.props;
 
 const allNews = (
     await getCollection("news", ({ data }) => {
-        return filter ? data.area === filter : true;
+        return filter ? data.areas.includes(filter) : true;
     })
 ).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---

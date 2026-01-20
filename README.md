@@ -8,6 +8,9 @@
 Create a new page in [src/content/news](src/content/news).
 You can copy an existing page, but make sure to adjust all metadata.
 To keep everything sorted, prefix the page name with the current year.
+If you add values to the `areas` array, the news will automatically appear on the respective subpages, in addtition to the landing page.
+Add `robots` for the robots page, and/or the id(s) of research groups (right now, `reinforcement_learning`, `imitation_learning`, `ml_for_simulation`, `generative_modeling`).
+If you don't add any areas, the news will only appear on the landing page.
 
 ### ...a new thesis topic?
 Create a new page in [src/content/theses](src/content/theses).
@@ -22,6 +25,8 @@ If you want a shiny badge, make sure to include one of the following keywords in
 - `best student paper`
 - `spotlight`
 - `oral`
+You can add the id(s) of research groups (right now, `reinforcement_learning`, `imitation_learning`, `ml_for_simulation`, `generative_modeling`) to the `areas` array to make the publication automatically appear on the respective research group subpages.
+The publication will always be added to the publications page.
 
 In case you're running a development build, make sure to run `npm run import-bibtex` to update the citations list.
 Production builds run this automatically.

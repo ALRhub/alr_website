@@ -11,7 +11,7 @@ const { filter, title = true } = Astro.props;
 
 const allPapers = (
     await getCollection("publications", ({ data }) => {
-        return filter ? data.area === filter : true;
+        return filter ? data.areas.includes(filter) : true;
     })
 ).sort((a, b) => b.data.year - a.data.year);
 const years = [...new Set(allPapers.map((p) => p.data.year))];

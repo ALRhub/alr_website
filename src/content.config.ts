@@ -24,7 +24,7 @@ const publications = defineCollection({
       text: z.string(),
       type: z.enum(['gold', 'blue', 'red', 'green', 'default']).default('default')
     })).optional(),
-    area: z.string().optional(),
+    areas: z.array(z.string()).default([]),
   }),
 });
 
@@ -73,7 +73,7 @@ const news = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.date(),
-    area: z.string().optional()
+    areas: z.array(z.string()).default([])
   }),
 });
 
