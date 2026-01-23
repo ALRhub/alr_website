@@ -10,7 +10,7 @@ github: "https://github.com/ataranovic"
 linkedin: "https://www.linkedin.com/in/aleksandartaranovic/"
 website: "https://ataranovic.github.io/"
 googleScholar: "https://scholar.google.com/citations?user=2IovJsIAAAAJ"
-weight: 28
+weight: 18
 ---
 I'm a PhD student in the ALR group at KIT, supervised by Prof. Gerhard Neumann.
 I started my PhD at the Bosch Center for Artificial Intelligence (BCAI) in January 2020, jointly supervised by Dr. Andras Kupcsik and Prof. Neumann before moving to KIT in April 2023.

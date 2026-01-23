@@ -10,6 +10,6 @@ github: "https://github.com/niklasfreymuth"
 linkedin: "https://www.linkedin.com/in/niklasfreymuth/"
 website: "https://nfreymuth.com/"
 googleScholar: "https://scholar.google.com/citations?user=FK1DbrcAAAAJ"
-weight: 28
+weight: 15
 ---
 Last-year PhD student on Graph Neural Networks, physical simulation and mesh refinement, and recently large language modeling.

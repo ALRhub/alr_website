@@ -6,7 +6,7 @@ bio: "Computer Vision, Imitation Learning, Robot Grasping."
 joinedIn: "2021"
 areas: ["imitation_learning"]
 email: "nicolas.schreiber@kit.edu"
-weight: 23
+weight: 19
 ---
 I started at the ALR Lab as a student assistant, then did my master thesis there and finally joined in 2021 as a PhD student.
 Before starting as PhD student, I did my Bachelor's and Master's at KIT in Karlsruhe.

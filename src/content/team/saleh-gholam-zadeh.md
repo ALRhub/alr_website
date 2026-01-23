@@ -7,7 +7,7 @@ bio: "Computer Networking, Deep Probabilistic Models"
 joinedIn: January 2022
 areas: []
 email: "saleh.gholam.zadeh@sap.com"
-weight: 52
+weight: 51
 ---
 I have obtained my Bachelor’s (AUT, Iran, 2017) and Master’s (EPFL, Switzerland, 2020) degree in Electrical Engineering with a focus on machine learning and Data science.
 I joined the Autonomous Learning Robot group (ALR) as an external PhD student in Jan 2022.
