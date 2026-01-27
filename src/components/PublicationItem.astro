@@ -44,15 +44,45 @@ const formatLabel = (key: string) => {
 >
   {
     cover && (
-      <div class="shrink-0 w-full sm:w-48 h-32 sm:h-28 rounded-lg overflow-hidden border border-gray-100 bg-gray-50">
-        <Image
-          src={cover}
-          alt={title}
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          quality={80}
-          format="webp"
-          width={300}
-        />
+      <div class="shrink-0 w-full sm:w-48 h-32 sm:h-28 flex items-center justify-center">
+        <button
+          onclick={`document.getElementById('dialog-${entry.id}').showModal()`}
+          class="cursor-zoom-in w-full h-full flex items-center justify-center focus:outline-none"
+          aria-label="Enlarge cover image"
+        >
+          <Image
+            src={cover}
+            alt={title}
+            class="max-w-full max-h-full w-auto h-auto rounded-lg border border-gray-100 bg-white group-hover:scale-105 transition-transform duration-500"
+            quality={80}
+            format="webp"
+            width={300}
+          />
+        </button>
+
+        <dialog
+          id={`dialog-${entry.id}`}
+          class="bg-transparent p-0 m-auto backdrop:bg-black/80 focus:outline-none max-w-[90vw] max-h-[90vh]"
+          onclick="if(event.target === this) this.close()"
+        >
+          <div class="relative flex items-center justify-center">
+            <Image
+              src={cover}
+              alt={title}
+              class="max-w-full max-h-[90vh] w-auto h-auto rounded-lg shadow-2xl block"
+              quality={100}
+              format="webp"
+              width={1200}
+            />
+            <button
+              onclick={`document.getElementById('dialog-${entry.id}').close()`}
+              class="absolute top-3 right-3 bg-white text-gray-900 rounded-full w-10 h-10 flex items-center justify-center shadow-sm border border-gray-200 hover:bg-gray-100 transition-colors focus:outline-none cursor-pointer"
+              aria-label="Close"
+            >
+              <Icon name="tabler:x" class="w-5 h-5" />
+            </button>
+          </div>
+        </dialog>
       </div>
     )
   }
