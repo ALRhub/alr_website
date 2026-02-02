@@ -20,7 +20,7 @@ export const SITE = {
     title: 'Autonomous Learning Robots Lab',
     subtitle: 'Machine Learning Research for Robotics',
     image: heroImage, // Hero image path
-  },
+  }
 
   // Navigation
   nav: [
