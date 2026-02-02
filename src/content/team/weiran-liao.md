@@ -2,7 +2,7 @@
 name: "Weiran Liao"
 role: "PhD Student"
 avatar: "../../assets/avatars/weiran.png"
-bio: "Reinforcement Learning, imitation learning"
+bio: "Reinforcement Learning, Imitation Learning"
 joinedIn: "09.2025"
 areas: ["reinforcement_learning"]
 email: "ew5996@partner.kit.edu"

@@ -7,6 +7,7 @@ bio: "Robot Manipulation, Diffusion Policies, and Massively Parallel Reinforceme
 email: "baohuy.le@de.bosch.com"
 github: "https://github.com/leh2rng"
 linkedin: "https://www.linkedin.com/in/bao-huy-le"
+areas: ["reinforcement_learning"]
 weight: 50
 ---
 I am an off-campus PhD student at the Bosch Center for Artificial Intelligence, having joined the ALR group in April 2024 under the supervision of [Prof. Gerhard Neumann](/team/geri). I completed my Master’s degree at the Technical University of Dortmund.
