@@ -1,0 +1,83 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Prose from "../components/Prose.astro";
+import ExternalLink from "../components/ExternalLink.astro";
+---
+
+<!-- This is based on TECO's impressum (https://teco.edu/impressum/) and KIT's impressum (https://www.kit.edu/impressum.php)-->
+<Layout title="Impressum">
+  <div class="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+    <h1 class="text-4xl font-extrabold text-gray-900 mb-8">Impressum</h1>
+
+    <Prose>
+      <h2>Anbieter</h2>
+      <p>Dienstanbieter im Sinne von §5 Telemediengesetz (TMG) und §55 Rundfunkstaatsvertrag (RStV):</p>
+      <p>
+        <strong>Rechtlicher Sitz:</strong><br />
+        Karlsruher Institut für Technologie<br />
+        IAR-ALR Prof. Neumann<br />
+        Adenauerring 12<br />
+        76131 Karlsruhe<br />
+        Germany
+      </p>
+      <p>
+        <strong>Ansprechpartner:</strong> Prof. Dr. Gerhard Neumann
+      </p>
+      <p>
+        <strong>Umsatzsteueridentifikationsnummer (VAT-Nr.):</strong> DE266749428
+      </p>
+
+      <h2>Kontakt</h2>
+      <p>
+        <strong>Email:</strong> <ExternalLink href="mailto:christine.brand@kit.edu">christine.brand@kit.edu</ExternalLink><br />
+        <strong>Telefon:</strong> +49 721 608-48430<br />
+        <strong>KIT-Website:</strong>
+        <ExternalLink href="https://alr.iar.kit.edu/"
+          >https://alr.iar.kit.edu/</ExternalLink
+        >
+      </p>
+
+      <h2>Copyright</h2>
+      <p>
+        Für die Internetseite der Forschungsgruppe ALR liegen Copyright und alle
+        weiteren Rechte bei der Forschungsgruppe ALR, welche dem Karlsruher
+        Institut für Technologie, Adenauerring 12, 76131 Karlsruhe, Deutschland,
+        angegliedert ist. Weiterverbreitung, auch in Auszügen, für pädagogische,
+        wissenschaftliche oder private Zwecke ist unter Angabe der Quelle
+        gestattet (sofern nicht anders an der entsprechenden Stelle ausdrücklich
+        angegeben). Eine Verwendung im gewerblichen Bereich bedarf der
+        Genehmigung durch der Forschungsgruppe ALR. Ansprechpartner ist Prof.
+        Dr. Gerhard Neumann.
+      </p>
+
+      <h2>Haftung</h2>
+      <p>
+        Diese Internetseiten dienen lediglich der Information. Ihr Inhalt wurde
+        mit gebührender Sorgfalt zusammengestellt. Die Forschungsgruppe ALR
+        übernimmt aber keine Garantie, weder ausdrücklich noch implizit, für die
+        Art oder Richtigkeit des dargebotenen Materials und übernimmt keine
+        Haftung (einschließlich Haftung für indirekten Verlust oder Gewinn- oder
+        Umsatzverluste) bezüglich des Materials bzw. der Nutzung dieses
+        Materials. Sollten Inhalte von der Webseite der Forschungsgruppe ALR
+        gegen geltende Rechtsvorschriften verstoßen, dann bitten wir um
+        umgehende Benachrichtigung. Wir werden die Seite oder den betreffenden
+        Inhalt dann schnellstmöglich entfernen.
+      </p>
+
+      <h2>Verweise auf externe Webseiten</h2>
+      <p>
+        Die Webseite der Forschungsgruppe enthält Verweise (Links) zu
+        Informationsangeboten auf Servern, die nicht der Kontrolle und
+        Verantwortlichkeit der Forschungsgruppe ALR unterliegen. Die
+        Forschungsgruppe ALR übernimmt keine Verantwortung und keine Garantie
+        für diese Informationen und billigt oder unterstützt diese auch nicht
+        inhaltlich.
+      </p>
+
+      <h2>Datenschutz und IT-Sicherheit</h2>
+      <p>
+        Hinweise zum Datenschutz finden Sie in unserer <a href="/datenschutz">Datenschutzerklärung</a>.
+      </p>
+    </Prose>
+  </div>
+</Layout>

@@ -1,7 +1,7 @@
 import heroImage from './assets/hero-real.jpg';
 
 export const SITE = {
-  website: 'https://scholar-lite-demo.netlify.app/', // Replace with your actual deployed URL
+  website: 'https://alr-kit.de/',
   author: 'Autonomous Learning Robots Lab @ KIT',
   description: 'Robot Learning and Generative Modeling',
   title: 'Autonomous Learning Robots Lab @ KIT',
