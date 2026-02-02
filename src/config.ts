@@ -18,7 +18,7 @@ export const SITE = {
   // Hero Section (Home Page)
   hero: {
     title: 'Autonomous Learning Robots Lab',
-    subtitle: 'We do research on robot learning.',
+    subtitle: 'Machine Learning Research for Robotics',
     image: heroImage, // Hero image path
   },
 
