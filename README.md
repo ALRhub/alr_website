@@ -1,7 +1,12 @@
 ## 📁 Directory Structure
-*  **Images**: Store website assets in `src/assets/images/`. Use `.webp` or optimized `.jpg` for better performance.
-*   **Team Photos**: Place headshots in `src/assets/team/`. Square aspect ratio (1:1) is recommended.
-*   **Content**: All editable content (News, Team, Research info) lives in `src/content/`.
+* **Images**: Store website assets in `src/assets/<papers, avatars, ...>`. Use `.webp` or optimized `.jpg` for better performance.
+*  **Content**: All editable content (News, Team, Research info) lives in `src/content/`.
+
+## Workflow
+If you want to change something, ideally create a pull request with your changes.
+The CI pipeline will automatically check whether the website still builds.
+If you are sure your change is good, you can merge the PR on your own.
+**All pushes to `main` are immediately deployed to the live website via Github pages, so be careful with pushing to `main`.**
 
 ## How do I add...
 ### ...news?
@@ -25,11 +30,14 @@ If you want a shiny badge, make sure to include one of the following keywords in
 - `best student paper`
 - `spotlight`
 - `oral`
+
 You can add the id(s) of research groups (right now, `reinforcement_learning`, `imitation_learning`, `ml_for_simulation`, `generative_modeling`) to the `areas` array to make the publication automatically appear on the respective research group subpages.
 The publication will always be added to the publications page.
 
 In case you're running a development build, make sure to run `npm run import-bibtex` to update the citations list.
 Production builds run this automatically.
+
+**Important**: Never edit the generated yaml files! They will be overwritten by `import-bibtex`. Always edit the bibtex file.
 
 ### ...a new team member?
 Create a new page in [src/content/team](src/content/team).
@@ -83,7 +91,7 @@ npm run build
 ```
 
 ## Icons
-We are using `astro-icon` with `tabler` for generic icons and `simple-icons` for brand icons.
+We use `astro-icon` with `tabler` for generic icons and `simple-icons` for brand icons.
 
 ## OpenGraph Thumbnails
 Thumbnails for OpenGraph (ie, the image that you see when you link to the page on Slack) are generated automatically in `og/[...slug].png.ts`.
