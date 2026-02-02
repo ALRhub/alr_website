@@ -2,13 +2,13 @@
 name: "Huy Le"
 role: "Off-Campus PhD Student"
 extra_affiliations: ["Bosch"]
-avatar: "../../assets/avatars/default.png"
-bio: "Deformable Object Manipulation, Geometric Deep Learning, Reinforcement Learning"
-joinedIn: "April 2024"
-areas: ["ml_for_simulation", "reinforcement_learning"]
+avatar: "../../assets/avatars/huy.jpg"
+bio: "Robot Manipulation, Diffusion Policies, and Massively Parallel Reinforcement Learning"
 email: "baohuy.le@de.bosch.com"
-weight: 54
+github: "https://github.com/leh2rng"
+linkedin: "https://www.linkedin.com/in/bao-huy-le"
+weight: 50
 ---
-I began my PhD at Bosch Corporate Research in Renningen on April 1, 2024.
-I completed my Master's degree in Data Science at TU Dortmund and earned my Bachelor's degree in Computer Science from the University of Information Technology in Vietnam.
-My research focuses on Deformable Object Manipulation, Geometric Deep Learning, and Reinforcement Learning.
+I am an off-campus PhD student at the Bosch Center for Artificial Intelligence, having joined the ALR group in April 2024 under the supervision of [Prof. Gerhard Neumann](/team/geri). I completed my Master’s degree at the Technical University of Dortmund.
+
+My research focuses on scaling robot learning for complex tasks. Specifically, I work on **Robot Manipulation**, **Diffusion Policies**, and **Massively Parallel Reinforcement Learning**.
