@@ -1,7 +1,7 @@
 ---
 name: "Denis Blessing"
 role: "PhD Student"
-avatar: "../../assets/avatars/default.png"
+avatar: "../../assets/avatars/denis.jpg"
 bio: "Variational Inference, Latent Variable Models, Diffusion Models."
 joinedIn: "January 2023"
 areas: ["generative_modeling"]
