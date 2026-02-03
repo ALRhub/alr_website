@@ -76,16 +76,29 @@ You can copy an existing page, but make sure to adjust all metadata.
 
 
 ## 🛠️ Development
-You need `npm` (version >= 18.20) to be installed (Note: The default version on Ubuntu 22.04 is too old! You will need [nvm](https://github.com/nvm-sh/nvm)).
+You need `npm` (version >= 18.20) to be installed 
 
-Start the local server with hot module replacement:
+Note: The default version on Ubuntu 22.04 is too old! You will need [nvm](https://github.com/nvm-sh/nvm).
+After installing nvm, run
+```
+nvm install 20.0
+nvm use 20.0
+```
+
+To install the website dependencies, run
+```
+npm i
+```
+once in the root directory of the repository.
+
+Then start the local server with hot module replacement:
 ```bash
 npm run dev
 ```
 Visit `http://localhost:4321`.
 
 ## Production Build
-Generate the static site and search index:
+Generate the static site:
 ```bash
 npm run build
 ```
