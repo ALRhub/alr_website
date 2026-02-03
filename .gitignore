@@ -34,3 +34,7 @@ Desktop.ini
 
 # Testing
 coverage/
+
+# paper .md files
+# always add publications to the global citations.bib file, never as markdown
+src/content/publications

@@ -1,3 +1,9 @@
+> [!CAUTION]
+> This repository is public: Don't include any confidential information, even within comments.
+
+> [!CAUTION]
+> All commits to `main` are immediately deployed to the live website. If you want to change something, please create a pull request first. Just create a new branch, you don't need to fork the repository.
+
 ## 📁 Directory Structure
 * **Images**: Store website assets in `src/assets/<papers, avatars, ...>`. Use `.webp` or optimized `.jpg` for better performance.
 *  **Content**: All editable content (News, Team, Research info) lives in `src/content/`.
@@ -24,6 +30,9 @@ If the topic is already assigned, make sure to include `assigned: true` and set 
 Otherwise, don't forget to update the info as soon as the topic is assigned!
 
 ### ...a new publication?
+> [!WARNING]
+> **Never** create or edit the publication markdown files directly. They are automatically generated from the [citations.bib](citations.bib) file. Always edit this file.
+
 Simply add the bibtex entry to [citations.bib](citations.bib).
 If you want a shiny badge, make sure to include one of the following keywords in the `note` field (case doesn't matter, and you can also include other text):
 - `best paper`
@@ -34,10 +43,7 @@ If you want a shiny badge, make sure to include one of the following keywords in
 You can add the id(s) of research groups (right now, `reinforcement_learning`, `imitation_learning`, `ml_for_simulation`, `generative_modeling`) to the `areas` array to make the publication automatically appear on the respective research group subpages.
 The publication will always be added to the publications page.
 
-In case you're running a development build, make sure to run `npm run import-bibtex` to update the citations list.
-Production builds run this automatically.
-
-**Important**: Never edit the generated yaml files! They will be overwritten by `import-bibtex`. Always edit the bibtex file.
+In case you're running a development build, you need to restart the development server to trigger the publication import script and see your changes.
 
 ### ...a new team member?
 Create a new page in [src/content/team](src/content/team).

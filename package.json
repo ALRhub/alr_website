@@ -27,7 +27,7 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
+    "dev": "npm run import-bibtex && astro dev",
     "build": "npm run import-bibtex && astro build",
     "preview": "astro preview",
     "astro": "astro",
