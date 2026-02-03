@@ -6,6 +6,8 @@ bio: "Variational Inference, Latent Variable Models, Diffusion Models."
 joinedIn: "January 2023"
 areas: ["generative_modeling"]
 email: "denis.blessing@kit.edu"
+github: "https://github.com/DenisBless"
+googleScholar: "https://scholar.google.com/citations?user=_eEXIEcAAAAJ"
 weight: 20
 ---
 I joined the Autonomous Learning Robot group in January 2023 as a PhD student.
