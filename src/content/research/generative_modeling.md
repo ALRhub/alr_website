@@ -1,7 +1,7 @@
 ---
 title: "Generative Modeling"
 description: "Our research in computer vision focuses on object detection, segmentation, and 3D reconstruction."
-cover: "../../assets/research/generative_modeling.jpg"
+cover: "../../assets/research/generative_modeling.png"
 order: 4
 ---
 

@@ -2,9 +2,9 @@
 name: "Tai Hoang"
 role: "PhD Student"
 avatar: "../../assets/avatars/tai.jpg"
-bio: "Focusing on reinforcement learning and physical modelling with graphs."
+bio: "Reinforcement learning and physical modelling with graphs."
 joinedIn: "June 2023"
-areas: ["ml_for_simulation"]
+areas: ["ml_for_simulation","reinforcement_learning"]
 email: "tai.hoang@kit.edu"
 github: "https://github.com/thobotics"
 linkedin: "https://www.linkedin.com/in/thobotics"
