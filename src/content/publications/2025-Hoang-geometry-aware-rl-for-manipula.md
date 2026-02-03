@@ -1,18 +1,20 @@
 ---
-title: "Geometry-aware RL for manipulation of varying shapes and deformable objects"
+title: "Geometry-aware RL for Manipulation of Varying Shapes and Deformable Objects"
 authors: ["Tai Hoang", "Huy Le", "Philipp Becker", "Vien Anh Ngo", "Gerhard Neumann"]
 year: 2025
-venue: "Preprint"
+venue: "ICLR"
 type: "paper"
-cover: "../../assets/papers/paper-vision.jpg"
+cover: "../../assets/papers/hepi.png"
 links:
-  pdf: ""
+  pdf: "https://openreview.net/forum?id=7BLXhmWvwF"
   code: ""
   website: ""
   demo: ""
   slides: ""
   video: ""
+badges:
+  - { text: "Oral", type: "red" }
 description: ""
 featured: false
-areas: []
+areas: ["ml_for_simulation", "reinforcement_learning"]
 ---

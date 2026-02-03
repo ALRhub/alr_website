@@ -1,12 +1,12 @@
 ---
-title: "MaNGO-Adaptable Graph Network Simulators via Meta-Learning"
+title: "MaNGO — Adaptable Graph Network Simulators via Meta-Learning"
 authors: ["Philipp Dahlinger", "Tai Hoang", "Denis Blessing", "Niklas Freymuth", "Gerhard Neumann"]
 year: 2025
-venue: "Preprint"
+venue: "NeurIPS"
 type: "paper"
 cover: "../../assets/papers/paper-vision.jpg"
 links:
-  pdf: ""
+  pdf: "https://openreview.net/forum?id=rc3XO4RARL"
   code: ""
   website: ""
   demo: ""
@@ -14,5 +14,5 @@ links:
   video: ""
 description: ""
 featured: false
-areas: []
+areas: ["ml_for_simulation"]
 ---

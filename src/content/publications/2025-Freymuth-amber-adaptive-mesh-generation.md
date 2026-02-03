@@ -1,12 +1,12 @@
 ---
 title: "AMBER: Adaptive Mesh Generation by Iterative Mesh Resolution Prediction"
-authors: ["Niklas Freymuth", "Tobias Würth", "Nicolas Schreiber", "Balazs Gyenes", "Andreas Boltres", "Johannes Mitsch", "Aleksandar Taranovic", "Tai Hoang", "Philipp Dahlinger", "Philipp Becker", "others"]
+authors: ["Niklas Freymuth", "Tobias Würth", "Nicolas Schreiber", "Balázs Gyenes", "Andreas Boltres", "Johannes Mitsch", "Aleksandar Taranovic", "Tai Hoang", "Philipp Dahlinger", "Philipp Becker", "Luise Kärger", "Gerhard Neumann"]
 year: 2025
-venue: "Preprint"
+venue: "NeurIPS"
 type: "paper"
 cover: "../../assets/papers/paper-vision.jpg"
 links:
-  pdf: ""
+  pdf: "https://openreview.net/forum?id=CDEbgwJ6ET"
   code: ""
   website: ""
   demo: ""
@@ -14,5 +14,5 @@ links:
   video: ""
 description: ""
 featured: false
-areas: []
+areas: ["ml_for_simulation"]
 ---
