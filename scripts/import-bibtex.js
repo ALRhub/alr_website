@@ -10,10 +10,11 @@ const __dirname = path.dirname(__filename);
 const BIB_FILE = path.join(process.cwd(), 'citations.bib');
 const PUBLICATIONS_DIR = path.join(process.cwd(), 'src', 'content', 'publications');
 
-// Ensure output directories exist
+// Remove output dir if it exists
 if (!fs.existsSync(PUBLICATIONS_DIR)) {
-  fs.mkdirSync(PUBLICATIONS_DIR, { recursive: true });
+  fs.rmSync(PUBLICATIONS_DIR, { recursive: true, force: true})
 }
+fs.mkdirSync(PUBLICATIONS_DIR, { recursive: true });
 
 // Helper to decode LaTeX special characters to Unicode
 function decodeLatex(str) {
