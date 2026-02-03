@@ -1,6 +1,6 @@
 ---
 title: "Reinforcement Learning"
-description: "Our research in computer vision focuses on object detection, segmentation, and 3D reconstruction."
+description: "New Reinforcement Learning Algorithms for learning complex skills."
 cover: "../../assets/hero-real.jpg"
 order: 1
 ---
