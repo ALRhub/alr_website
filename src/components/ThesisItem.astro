@@ -37,21 +37,21 @@ const formatType = (type: string) => {
 ---
 
 <div
-    class="group relative bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
+    class="group relative bg-white border border-gray-100 hover:border-blue-300 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 h-full flex flex-col"
 >
-    <div class="p-6 flex flex-col space-y-2">
+    <div class="p-6 flex flex-col flex-1">
         <!-- Title -->
-        <h3 class="mb-3 group-hover:text-blue-600 transition-colors">
+        <h3 class="mb-3 group-hover:text-blue-600 transition-colors line-clamp-2 min-h-[3.5rem]" title={title}>
             {title}
         </h3>
 
         <!-- Start date / assigned student -->
-        <div class="text-gray-600 text-sm leading-relaxed">
+        <div class="text-gray-600 text-sm leading-relaxed mb-2">
             {assigned ? <p>Student: {student}</p> : <p>Start: {start}</p>}
         </div>
 
         <!-- Types -->
-        <div class="flex items-center flex-wrap gap-2 text-sm text-gray-500">
+        <div class="flex items-center flex-wrap gap-2 text-sm text-gray-500 mb-4">
             {
                 types.map((ty) => {
                     return (
@@ -66,16 +66,16 @@ const formatType = (type: string) => {
         </div>
 
         <!-- Supervisors -->
-        <div class="mt-4">
+        <div class="mb-4 flex-1">
             <p class="text-xs font-medium text-gray-500 mb-2">Supervisors</p>
-            <div class="flex flex-wrap gap-2">
+            <div class="flex flex-wrap gap-x-3 gap-y-1">
                 {
                     supervisors.map((supervisor) => {
                         let member = members.find((m) => m.id.replace(/\.[^/.]+$/, "") === supervisor);
                         return (
                             <a
                                 href={`/team/${supervisor}`}
-                                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-blue-700 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-all"
+                                class="text-base font-semibold text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-600 transition-all duration-200 hover:scale-105 inline-block"
                             >
                                 {member ? member.data.name : supervisor}
                             </a>
@@ -86,7 +86,7 @@ const formatType = (type: string) => {
                     externalSupervisors?.map((supervisor) => (
                         <a
                             href={`mailto:${supervisor.email}`}
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-blue-700 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-all"
+                            class="text-base font-semibold text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-600 transition-all duration-200 hover:scale-105 inline-block"
                         >
                             {supervisor.name}
                         </a>
@@ -96,13 +96,13 @@ const formatType = (type: string) => {
         </div>
 
         <!-- Topics -->
-        <div class="mt-3">
+        <div class="mb-4">
             <p class="text-xs font-medium text-gray-500 mb-2">Topics</p>
             <div class="flex flex-wrap gap-2">
                 {
                     topics.map((topic) => {
                         return (
-                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-gray-700 bg-gray-50 border border-gray-200 rounded-lg">
+                            <span class="inline-flex items-center gap-1.5 px-2 py-1 text-xs font-medium text-gray-600 bg-gray-50 rounded-md">
                                 {topic}
                             </span>
                         );
@@ -112,7 +112,7 @@ const formatType = (type: string) => {
         </div>
 
         <!-- pdf link -->
-        <div>
+        <div class="mt-auto pt-4">
             <a
                 href={pdf}
                 class="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-700"
