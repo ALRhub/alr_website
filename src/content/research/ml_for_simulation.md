@@ -1,7 +1,7 @@
 ---
 title: "ML for Simulation"
 description: "Developing advanced graph-based algorithms for physics-consistent simulations and automated engineering workflows."
-cover: "../../assets/hero-real.jpg"
+cover: "../../assets/research/ml_for_sim_logo.png"
 order: 3
 ---
 # Machine Learning for Simulation
