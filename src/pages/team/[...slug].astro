@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
 import { Icon } from "astro-icon/components";
 import Prose from "../../components/Prose.astro";
+import ThesisItem from "../../components/ThesisItem.astro";
 
 export async function getStaticPaths() {
   const teamMembers = await getCollection("team");
@@ -27,6 +28,15 @@ const {
   twitter,
   googleScholar,
 } = member.data;
+
+const memberId = member.id.replace(/\.[^/.]+$/, "");
+const allTheses = await getCollection("theses");
+const supervisedTheses = allTheses.filter((thesis) => 
+  thesis.data.supervisors.includes(memberId)
+).sort((a, b) => a.data.order - b.data.order);
+
+const availableTheses = supervisedTheses.filter((t) => !t.data.assigned);
+const assignedTheses = supervisedTheses.filter((t) => t.data.assigned);
 ---
 
 <Layout title={name}>
@@ -149,5 +159,23 @@ const {
     </div>
 
     <Prose><Content /></Prose>
+
+    {availableTheses.length > 0 && (
+      <div class="mt-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Available Theses</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {availableTheses.map((thesis) => <ThesisItem entry={thesis} />)}
+        </div>
+      </div>
+    )}
+
+    {assignedTheses.length > 0 && (
+      <div class="mt-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Assigned Theses</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {assignedTheses.map((thesis) => <ThesisItem entry={thesis} />)}
+        </div>
+      </div>
+    )}
   </div>
 </Layout>

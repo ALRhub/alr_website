@@ -110,6 +110,10 @@ const theses = defineCollection({
     ])),
     topics: z.array(z.string()),
     supervisors: z.array(z.string()),
+    externalSupervisors: z.array(z.object({
+      name: z.string(),
+      email: z.string(),
+    })).optional(),
     start: z.string(),
     added: z.date(),
     order: z.number().default(100),
