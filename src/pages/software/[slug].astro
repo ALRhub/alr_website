@@ -1,10 +1,10 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getCollection, render } from 'astro:content';
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-  const softwares = await getCollection('softwares');
-  return softwares.map(software => ({
+  const softwares = await getCollection("softwares");
+  return softwares.map((software) => ({
     params: { slug: software.id.replace(/\.[^/.]+$/, "") },
     props: { software },
   }));
@@ -16,13 +16,20 @@ const { Content } = await render(software);
 
 <Layout title={software.data.title}>
   <article class="max-w-4xl mx-auto px-4 py-12 sm:py-20">
-    <a href="/software" class="inline-flex items-center text-sm text-gray-500 hover:text-blue-600 mb-8 transition-colors">
+    <a
+      href="/software"
+      class="inline-flex items-center text-sm text-gray-500 hover:text-blue-600 mb-8 transition-colors"
+    >
       &larr; Back to Software
     </a>
 
     <header class="mb-12">
-      <h1 class="text-4xl font-bold text-gray-900 mb-6">{software.data.title}</h1>
-      <p class="text-xl text-gray-600 leading-relaxed">{software.data.description}</p>
+      <h1 class="text-4xl font-bold text-gray-900 mb-6">
+        {software.data.title}
+      </h1>
+      <p class="text-xl text-gray-600 leading-relaxed">
+        {software.data.description}
+      </p>
     </header>
 
     <div class="prose prose-lg prose-blue max-w-none text-gray-700">
