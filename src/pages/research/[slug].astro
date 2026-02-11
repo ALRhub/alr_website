@@ -35,11 +35,11 @@ const team = (
     <header class="mb-12">
       {
         area.data.cover && (
-          <div class="w-full h-64 sm:h-96 rounded-2xl overflow-hidden bg-gray-100 mb-8">
+          <div class="w-full h-64 sm:h-96 rounded-2xl overflow-hidden mb-8">
             <img
               src={area.data.cover.src}
               alt={area.data.title}
-              class="w-full h-full object-cover"
+              class="w-full h-full object-contain"
             />
           </div>
         )
