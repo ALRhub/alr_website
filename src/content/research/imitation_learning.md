@@ -1,7 +1,7 @@
 ---
 title: "Imitation Learning"
 description: "Efficiently learning from human demonstrations across model sizes and input modalities."
-cover: "../../assets/hero-real.jpg"
+cover: "../../assets/research/imitation_learning.jpg"
 order: 2
 ---
 # Imitation Learning
