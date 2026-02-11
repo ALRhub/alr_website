@@ -95,9 +95,9 @@ export async function GET({ params, props }: { params: any; props: any }) {
 
     // Convert to Base64 for Satori
     let encoding = null;
-    if (imagePath.endsWith("png")) {
+    if (imagePath.toLowerCase().endsWith("png")) {
       encoding = "png";
-    } else if (imagePath.endsWith("jpg") || imagePath.endsWith("jpeg")) {
+    } else if (imagePath.toLowerCase().endsWith("jpg") || imagePath.toLowerCase().endsWith("jpeg")) {
       encoding = "jpeg";
     }
     imageSrc = `data:image/${encoding};base64,${imageBuffer.toString('base64')}`;
