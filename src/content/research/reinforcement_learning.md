@@ -1,7 +1,7 @@
 ---
 title: "Reinforcement Learning"
 description: "New Reinforcement Learning Algorithms for learning complex skills."
-cover: "../../assets/hero-real.jpg"
+cover: "../../assets/research/reinforcement_learning.png"
 order: 1
 ---
 
