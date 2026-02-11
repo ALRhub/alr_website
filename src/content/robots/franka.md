@@ -1,6 +1,6 @@
 ---
 name: "Franka Emika Panda"
-teaser: "../../assets/avatars/default.png"
+teaser: "../../assets/avatars/franka.jpg"
 count: 4
 weight: 3
 ---
