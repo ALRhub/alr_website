@@ -27,6 +27,7 @@ const {
   github,
   twitter,
   googleScholar,
+  phone,
 } = member.data;
 
 const memberId = member.id.replace(/\.[^/.]+$/, "");
@@ -150,6 +151,18 @@ const assignedTheses = supervisedTheses.filter((t) => t.data.assigned);
                 >
                   <Icon name="simple-icons:googlescholar" class="w-4 h-4" />
                   <span>Scholar</span>
+                </a>
+              )
+            }
+            {
+              phone && (
+                <a
+                  href={'tel:' + phone}
+                  target="_blank"
+                  class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm"
+                >
+                  <Icon name="tabler:phone" class="w-4 h-4" />
+                  <span>{phone}</span>
                 </a>
               )
             }

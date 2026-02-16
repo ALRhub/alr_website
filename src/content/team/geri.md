@@ -7,6 +7,7 @@ areas: []
 email: "gerhard.neumann@kit.edu"
 linkedin: "https://www.linkedin.com/in/gerhard-neumann-661930124/"
 googleScholar: "https://scholar.google.com/citations?user=GL360kMAAAAJ&hl=en"
+phone: "+49 721 608 47101"
 weight: 1
 ---
 
