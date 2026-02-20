@@ -18,7 +18,7 @@ export const SITE = {
   // Hero Section (Home Page)
   hero: {
     title: 'Autonomous Learning Robots Lab',
-    subtitle: 'We do research on robot learning.',
+    subtitle: 'Developing principled reinforcement and imitation learning algorithms to let real robots solve complex tasks.',
     image: heroImage, // Hero image path
   },
 

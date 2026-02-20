@@ -6,11 +6,15 @@ import { Icon } from "astro-icon/components";
 import { SITE } from "../config";
 import NewsTimeline from "../components/NewsTimeline.astro";
 
-const researchAreas = (await getCollection("research"))
-  .sort((a, b) => a.data.order.valueOf() - b.data.order.valueOf());
+const researchAreas = (await getCollection("research")).sort(
+  (a, b) => a.data.order.valueOf() - b.data.order.valueOf(),
+);
 ---
 
-<Layout title="Home">
+<Layout
+  title="Autonomous Learning Robots Lab at KIT Karlsruhe"
+  description="The ALR Lab at Karlsruhe Institute of Technology develops principled reinforcement and imitation learning algorithms to let real robots solve complex tasks."
+>
   <!-- Hero Section -->
   <section
     class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden"
@@ -52,15 +56,15 @@ const researchAreas = (await getCollection("research"))
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <div class="max-w-3xl">
         <h1
-          class="text-5xl font-extrabold text-white sm:text-6xl md:text-7xl mb-6 drop-shadow-lg leading-tight"
+          class="font-extrabold text-white text-5xl sm:text-6xl md:text-7xl mb-6 leading-tight drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]"
         >
           <span class="block xl:inline">{SITE.hero.title}</span>
         </h1>
-        <p
-          class="mt-4 text-xl text-gray-300 sm:max-w-2xl md:text-2xl drop-shadow-md"
+        <h2
+          class="mt-4 text-xl font-normal text-gray-300 sm:max-w-2xl md:text-2xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]"
         >
           {SITE.hero.subtitle}
-        </p>
+        </h2>
         <div class="mt-10 flex gap-4">
           <a
             href="/publications"
@@ -146,7 +150,7 @@ const researchAreas = (await getCollection("research"))
       <div class="flex justify-between items-end mb-8">
         <h2>News</h2>
       </div>
-      <NewsTimeline title={false}/>
+      <NewsTimeline title={false} />
     </div>
   </section>
 </Layout>
