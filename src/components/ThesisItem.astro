@@ -19,7 +19,6 @@ const {
     added,
     order,
     assigned,
-    student,
     pdf,
 } = entry.data;
 
@@ -46,9 +45,11 @@ const formatType = (type: string) => {
         </h3>
 
         <!-- Start date / assigned student -->
-        <div class="text-gray-600 text-sm leading-relaxed mb-2">
-            {assigned ? <p>Student: {student}</p> : <p>Start: {start}</p>}
-        </div>
+        {!assigned && (
+            <div class="text-gray-600 text-sm leading-relaxed mb-2">
+                <p>Start: {start}</p>
+            </div>
+        )}
 
         <!-- Types -->
         <div class="flex items-center flex-wrap gap-2 text-sm text-gray-500 mb-4">

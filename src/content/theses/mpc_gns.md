@@ -10,5 +10,4 @@ start: ASAP
 added: 2026-02-10
 assigned: false
 pdf: "/theses/mpc_gns.pdf"
-student: ""
 ---

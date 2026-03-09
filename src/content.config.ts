@@ -119,8 +119,7 @@ const theses = defineCollection({
     added: z.date(),
     order: z.number().default(100),
     assigned: z.boolean(),
-    pdf: z.string(),
-    student: z.string().optional()
+    pdf: z.string()
   }),
 });
 
