@@ -30,6 +30,7 @@ export const SITE = {
     { text: 'Robots', link: '/robots', external: false },
     { text: 'Software', link: '/software', external: false },
     { text: 'Theses', link: '/theses', external: false },
+    { text: 'Jobs', link: '/hiwis', external: false },
     { text: 'Teaching', link: 'https://alr.iar.kit.edu/28.php', external: true },
   ]
 };

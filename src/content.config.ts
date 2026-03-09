@@ -133,6 +133,17 @@ const robots = defineCollection({
   }),
 });
 
+const hiwis = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/hiwi" }),
+  schema: ({ image }) => z.object({
+    title: z.string(),
+    supervisors: z.array(z.string()),
+    added: z.date(),
+    order: z.number().default(100),
+    teaser: image().optional(),
+  }),
+});
+
 export const collections = {
   publications,
   team,
@@ -142,4 +153,5 @@ export const collections = {
   softwares,
   theses,
   robots,
+  hiwis,
 };

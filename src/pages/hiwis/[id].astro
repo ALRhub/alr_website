@@ -1,0 +1,74 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+
+export async function getStaticPaths() {
+  const hiwis = await getCollection("hiwis");
+  return hiwis.map((hiwi) => ({
+    params: { id: hiwi.id },
+    props: { hiwi },
+  }));
+}
+
+const { hiwi } = Astro.props;
+const { Content } = await render(hiwi);
+const members = await getCollection("team");
+---
+
+<Layout title={hiwi.data.title}>
+  <article class="max-w-4xl mx-auto px-4 py-12 sm:py-20">
+    <a
+      href="/hiwis"
+      class="inline-flex items-center text-sm text-gray-500 hover:text-blue-600 mb-8 transition-colors"
+    >
+      &larr; Back to Open Positions
+    </a>
+
+    <header class="mb-12 border-b border-gray-200 pb-8">
+      {hiwi.data.teaser && (
+        <div class="w-full h-64 sm:h-96 overflow-hidden rounded-2xl mb-8 bg-gray-100 shadow-sm border border-gray-100">
+            <Image
+                src={hiwi.data.teaser}
+                alt={hiwi.data.title}
+                class="w-full h-full object-cover"
+                width={1200}
+                format="webp"
+            />
+        </div>
+      )}
+      <h1 class="text-4xl font-bold text-gray-900 mb-6">
+        {hiwi.data.title}
+      </h1>
+      
+      <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 text-gray-600">
+        {hiwi.data.supervisors && hiwi.data.supervisors.length > 0 && (
+          <div class="flex items-center gap-2">
+            <span class="font-medium text-gray-900 block sm:inline">Supervisors:</span>
+            <div class="inline-flex flex-wrap gap-2">
+              {hiwi.data.supervisors.map((supervisor, i) => {
+                const member = members.find((m) => m.id === supervisor);
+                return (
+                  <span>
+                    <a
+                      href={`/team/${supervisor}`}
+                      class="text-blue-600 hover:text-blue-800 hover:underline"
+                    >
+                      {member ? member.data.name : supervisor}
+                    </a>
+                    {i < hiwi.data.supervisors.length - 1 ? <span class="text-gray-400">,</span> : ""}
+                  </span>
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </div>
+    </header>
+
+    <div class="prose prose-lg prose-blue max-w-none text-gray-700">
+      <Content />
+    </div>
+  </article>
+</Layout>

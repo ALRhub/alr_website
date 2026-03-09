@@ -72,7 +72,7 @@ const formatType = (type: string) => {
             <div class="flex flex-wrap gap-x-3 gap-y-1">
                 {
                     supervisors.map((supervisor) => {
-                        let member = members.find((m) => m.id.replace(/\.[^/.]+$/, "") === supervisor);
+                        let member = members.find((m) => m.id === supervisor);
                         return (
                             <a
                                 href={`/team/${supervisor}`}

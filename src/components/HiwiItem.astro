@@ -1,0 +1,74 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+interface Props {
+    entry: CollectionEntry<"hiwis">;
+}
+
+const members = await getCollection("team");
+
+const { entry } = Astro.props;
+const {
+    title,
+    supervisors,
+    teaser,
+} = entry.data;
+
+---
+
+<div
+    class="group relative bg-white border-2 border-gray-200 hover:border-blue-400 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 h-full flex flex-col"
+>
+    {teaser && (
+        <div class="w-full h-48 overflow-hidden bg-gray-100 border-b border-gray-200">
+            <Image
+                src={teaser}
+                alt={`Teaser for ${title}`}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                width={600}
+                format="webp"
+            />
+        </div>
+    )}
+    <div class="p-6 flex flex-col">
+        <!-- Title -->
+        <h3 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors line-clamp-2" title={title}>
+            <a href={`/hiwis/${entry.id}`}>
+                {title}
+            </a>
+        </h3>
+
+        <!-- Supervisors -->
+        <div class="mb-2">
+            <p class="text-xs font-medium text-gray-500 mb-2">Supervisors</p>
+            <div class="flex flex-wrap gap-x-3 gap-y-1">
+                {
+                    supervisors.map((supervisor) => {
+                        let member = members.find((m) => m.id === supervisor);
+                        return (
+                            <a
+                                href={`/team/${supervisor}`}
+                                class="text-base font-semibold text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-600 transition-all duration-200 hover:scale-105 inline-block"
+                            >
+                                {member ? member.data.name : supervisor}
+                            </a>
+                        );
+                    })
+                }
+            </div>
+        </div>
+
+        <!-- Links -->
+        <div class="mt-auto pt-2">
+            <a
+                href={`/hiwis/${entry.id}`}
+                class="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-700"
+            >
+                <span>Details</span>
+                <Icon name="tabler:arrow-right" class="ml-1 w-4 h-4" />
+            </a>
+        </div>
+    </div>
+</div>

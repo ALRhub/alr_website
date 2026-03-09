@@ -4,11 +4,12 @@ import { getCollection, render } from "astro:content";
 import { Icon } from "astro-icon/components";
 import Prose from "../../components/Prose.astro";
 import ThesisItem from "../../components/ThesisItem.astro";
+import HiwiItem from "../../components/HiwiItem.astro";
 
 export async function getStaticPaths() {
   const teamMembers = await getCollection("team");
   return teamMembers.map((member) => ({
-    params: { slug: member.id.replace(/\.[^/.]+$/, "") },
+    params: { slug: member.id },
     props: { member },
   }));
 }
@@ -30,7 +31,7 @@ const {
   phone,
 } = member.data;
 
-const memberId = member.id.replace(/\.[^/.]+$/, "");
+const memberId = member.id;
 const allTheses = await getCollection("theses");
 const supervisedTheses = allTheses.filter((thesis) => 
   thesis.data.supervisors.includes(memberId)
@@ -38,6 +39,11 @@ const supervisedTheses = allTheses.filter((thesis) =>
 
 const availableTheses = supervisedTheses.filter((t) => !t.data.assigned);
 const assignedTheses = supervisedTheses.filter((t) => t.data.assigned);
+
+const allHiwis = await getCollection("hiwis");
+const supervisedHiwis = allHiwis.filter((hiwi) => 
+  hiwi.data.supervisors.includes(memberId)
+).sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title={name}>
@@ -178,6 +184,15 @@ const assignedTheses = supervisedTheses.filter((t) => t.data.assigned);
         <h2 class="text-2xl font-bold text-gray-900 mb-6">Available Theses</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           {availableTheses.map((thesis) => <ThesisItem entry={thesis} />)}
+        </div>
+      </div>
+    )}
+
+    {supervisedHiwis.length > 0 && (
+      <div class="mt-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Open Hiwi Positions</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {supervisedHiwis.map((hiwi) => <HiwiItem entry={hiwi} />)}
         </div>
       </div>
     )}
