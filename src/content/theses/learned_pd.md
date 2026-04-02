@@ -5,6 +5,6 @@ supervisors: ["florian-seligmann", "onur-celik"]
 topics: ["Reinforcement Learning", "Humanoid", "Locomotion"]
 start: ASAP
 added: 2026-03-11
-assigned: false
+assigned: true
 pdf: "/theses/learned_pd.pdf"
 ---
