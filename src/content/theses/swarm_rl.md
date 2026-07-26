@@ -5,6 +5,7 @@ supervisors: ["niklas-freymuth", "philipp-dahlinger"]
 topics: ["Swarm Reinforcement Learning"]
 start: ASAP
 added: 2025-12-10
-assigned: false
+assigned: true
+student: Simon Scharpf and Paul Müller
 pdf: https://alr.iar.kit.edu/downloads/ProjectProposals/Swarm_Reinforcement_Learning_for_Time_De.pdf
 ---
