@@ -1,11 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import PublicationItem from '../components/PublicationItem.astro';
-import { getCollection } from 'astro:content';
 import PapersList from '../components/PapersList.astro';
-
-const allPapers = (await getCollection('publications')).sort((a, b) => b.data.year - a.data.year);
-const years = [...new Set(allPapers.map(p => p.data.year))];
 ---
 
 <Layout title="Publications">

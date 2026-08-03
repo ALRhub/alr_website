@@ -40,6 +40,11 @@ If you want a shiny badge, make sure to include one of the following keywords in
 - `spotlight`
 - `oral`
 
+Publications are grouped by year. Within a year, you can control the position with the numerical `order` field.
+Higher keys are sorted towards the top, and publications without an `order` field are sorted above all publications that have one.
+As with alumni, I'd recommend to increase this in intervals of 10 so that one can later add publications inbetween other ones.
+Publications with the same (or no) `order` are sorted by badge first (those with a badge go on top), then alphabetically by title.
+
 You can add the id(s) of research groups (right now, `reinforcement_learning`, `imitation_learning`, `ml_for_simulation`, `generative_modeling`) to the `areas` array to make the publication automatically appear on the respective research group subpages.
 The publication will always be added to the publications page.
 

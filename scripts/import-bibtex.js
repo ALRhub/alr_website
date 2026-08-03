@@ -225,6 +225,9 @@ function importBibtex() {
     }
 
     const doi = cleanString(tags.doi || '');
+
+    const orderStr = cleanString(tags.order || '');
+    const order = orderStr !== '' && !isNaN(Number(orderStr)) ? Number(orderStr) : null;
     
     const note = cleanString(tags.note || tags.keywords || '');
 
@@ -285,6 +288,7 @@ function importBibtex() {
       ...badges.map(b => `  - { text: "${b.text}", type: "${b.type}" }`),
       `description: "${description.replace(/"/g, '\\"')}"`,
       `featured: ${isFeatured}`,
+      order !== null ? `order: ${order}` : '',
       `areas: [${areas.map(a => `"${a.replace(/"/g, '\\"')}"`).join(', ')}]`,
       '---',
       '',

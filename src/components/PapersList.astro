@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import PublicationItem from "./PublicationItem.astro";
 
 interface Props {
@@ -9,11 +9,20 @@ interface Props {
 
 const { filter, title = true } = Astro.props;
 
+const awarded = (entry: CollectionEntry<"publications">) =>
+    (entry.data.badges?.length ?? 0) > 0 ? 1 : 0;
+
 const allPapers = (
     await getCollection("publications", ({ data }) => {
         return filter ? data.areas.includes(filter) : true;
     })
-).sort((a, b) => b.data.year - a.data.year);
+).sort(
+    (a, b) =>
+        b.data.year - a.data.year ||
+        (b.data.order ?? Infinity) - (a.data.order ?? Infinity) ||
+        awarded(b) - awarded(a) ||
+        a.data.title.localeCompare(b.data.title),
+);
 const years = [...new Set(allPapers.map((p) => p.data.year))];
 ---
 

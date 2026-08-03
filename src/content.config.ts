@@ -20,6 +20,7 @@ const publications = defineCollection({
       video: z.string().optional(),
     }).optional(),
     featured: z.boolean().default(false),
+    order: z.number().optional(),
     badges: z.array(z.object({
       text: z.string(),
       type: z.enum(['gold', 'blue', 'red', 'green', 'default']).default('default')
