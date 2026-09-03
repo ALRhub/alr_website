@@ -8,6 +8,7 @@ externalSupervisors:
 topics: ["MPC", "Graph Model Learning"]
 start: ASAP
 added: 2026-02-10
-assigned: false
+assigned: true
+student: rodi düger
 pdf: "/theses/mpc_gns.pdf"
 ---
