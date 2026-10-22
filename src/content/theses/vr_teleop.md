@@ -1,7 +1,7 @@
 ---
 title: "Immersive Vision-Based Teleoperation System via Virtual Reality"
 types: ["master"]
-supervisors: ["xinkai-jiang", "nicolas-schreiber"]
+supervisors: ["xinkai-jiang"]
 topics: ["Teleoperation", "VR"]
 start: ASAP
 added: 2026-02-10
