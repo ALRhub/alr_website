@@ -81,6 +81,11 @@ Esp, update the order key.
 Higher keys are sorted towards the top of the alumni list.
 I'd recommend to always increase this in intervals of 10 so that one can later add alumni inbetween other ones without having to change all the other alumni's order numbers.
 
+### ...a visiting researcher?
+Create a new page in [src/content/visitors](src/content/visitors).
+You can copy an existing page, but make sure to adjust all metadata.
+As with alumni, higher `order` keys are sorted towards the top.
+
 ### ...a new robot?
 Create a new page in [src/content/robots](src/content/robots).
 You can copy an existing page, but make sure to adjust all metadata.

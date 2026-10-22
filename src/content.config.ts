@@ -71,6 +71,18 @@ const alumni = defineCollection({
   }),
 });
 
+const visitors = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/visitors" }),
+  schema: z.object({
+    name: z.string(),
+    position: z.string(),
+    affiliation: z.string(),
+    dates: z.string(),
+    website: z.string().optional(),
+    order: z.number(),
+  }),
+});
+
 const news = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/news" }),
   schema: z.object({
@@ -149,6 +161,7 @@ export const collections = {
   publications,
   team,
   alumni,
+  visitors,
   news,
   research,
   softwares,
