@@ -1,13 +1,12 @@
 ---
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import { getCollection, type CollectionEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { getPerson } from "../utils/people";
 
 interface Props {
     entry: CollectionEntry<"hiwis">;
 }
-
-const members = await getCollection("team");
 
 const { entry } = Astro.props;
 const {
@@ -15,6 +14,8 @@ const {
     supervisors,
     teaser,
 } = entry.data;
+
+const supervisorPeople = await Promise.all(supervisors.map(getPerson));
 
 ---
 
@@ -45,17 +46,20 @@ const {
             <p class="text-xs font-medium text-gray-500 mb-2">Supervisors</p>
             <div class="flex flex-wrap gap-x-3 gap-y-1">
                 {
-                    supervisors.map((supervisor) => {
-                        let member = members.find((m) => m.id === supervisor);
-                        return (
+                    supervisorPeople.map((person) =>
+                        person.href ? (
                             <a
-                                href={`/team/${supervisor}`}
+                                href={person.href}
                                 class="text-base font-semibold text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-600 transition-all duration-200 hover:scale-105 inline-block"
                             >
-                                {member ? member.data.name : supervisor}
+                                {person.name}
                             </a>
-                        );
-                    })
+                        ) : (
+                            <span class="text-base font-semibold text-gray-700">
+                                {person.name}
+                            </span>
+                        )
+                    )
                 }
             </div>
         </div>
