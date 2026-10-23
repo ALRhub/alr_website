@@ -136,34 +136,46 @@ const groupedMembers = groups.reduce(
             <h2 class="mb-8 pl-4 border-l-4 border-blue-600">
               Visiting Researchers
             </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {visitors.map(({ data: visitor }) => (
-                <div class="group relative p-6 bg-white border-2 border-gray-200 hover:border-blue-400 rounded-2xl hover:shadow-lg transition-all duration-300">
-                  <p class="flex items-center gap-1.5 mb-3 text-xs font-semibold uppercase tracking-wide text-blue-600">
-                    <Icon name="tabler:calendar" class="w-4 h-4" />
-                    {visitor.dates}
-                  </p>
-                  <h3 class="mb-1 group-hover:text-blue-600 transition-colors">
-                    {visitor.website ? (
-                      <a
-                        href={visitor.website}
-                        target="_blank"
-                        class="after:absolute after:inset-0"
-                      >
-                        {visitor.name}
-                        <Icon
-                          name="tabler:arrow-up-right"
-                          class="w-4 h-4 text-gray-400 group-hover:text-blue-600 transition-colors"
-                        />
-                      </a>
-                    ) : (
-                      visitor.name
-                    )}
-                  </h3>
-                  <p class="text-gray-600">{visitor.position}</p>
-                  <p class="text-sm text-gray-500">{visitor.affiliation}</p>
-                </div>
-              ))}
+            <div class="overflow-x-auto">
+              <table class="min-w-full text-left border-collapse">
+                <thead>
+                  <tr>
+                    {["Name", "Position", "Affiliation", "Dates"].map((label) => (
+                      <th class="py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wide border-b-2 border-gray-100">
+                        {label}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody class="text-gray-700">
+                  {visitors.map(({ data: visitor }) => (
+                    <tr>
+                      <td class="py-4 px-4 border-b border-gray-100 align-middle">
+                        {visitor.website ? (
+                          <a href={visitor.website} target="_blank" class="group">
+                            {visitor.name}
+                            <Icon
+                              name="tabler:arrow-up-right"
+                              class="w-4 h-4 text-gray-400 group-hover:text-blue-600"
+                            />
+                          </a>
+                        ) : (
+                          visitor.name
+                        )}
+                      </td>
+                      <td class="py-4 px-4 border-b border-gray-100 align-middle text-gray-600">
+                        {visitor.position}
+                      </td>
+                      <td class="py-4 px-4 border-b border-gray-100 align-middle text-gray-600">
+                        {visitor.affiliation}
+                      </td>
+                      <td class="py-4 px-4 border-b border-gray-100 align-middle text-gray-600">
+                        {visitor.dates}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </section>
         )

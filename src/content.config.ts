@@ -77,7 +77,7 @@ const visitors = defineCollection({
     name: z.string(),
     position: z.string(),
     affiliation: z.string(),
-    dates: z.string(),
+    dates: z.string().optional(),
     website: z.string().optional(),
     order: z.number(),
   }),
