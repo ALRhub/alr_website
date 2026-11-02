@@ -6,7 +6,7 @@ bio: "Reinforcement Learning for Robotics, World Models."
 joinedIn: "2026"
 areas: ["reinforcement_learning"]
 email: "boehm.alina@kit.edu"
-weight: 16
+weight: 30
 ---
 I started my PhD at ALR in November 2026. My Bachelor's degree was in Cognitive Science at TU Darmstadt but towards the end I realized 
 that I find Machine Learning and Robotics very exciting so I changed directions for my Master's degree and studied 
